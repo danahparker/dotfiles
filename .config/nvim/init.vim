@@ -92,14 +92,14 @@ nnoremap <leader>. :CtrlPTag<cr>
 " Custom
 
 let g:coc_global_extensions =[
-	\ 'coc-go',
-	\ 'coc-json',
-	\ 'coc-markdownlint',
-	\ 'coc-pairs',
-	\ 'coc-python',
+    \ 'coc-go',
+    \ 'coc-json',
+    \ 'coc-markdownlint',
+    \ 'coc-pairs',
+    \ 'coc-python',
     \ 'coc-tsserver',
-	\ 'coc-yaml',
-	\ ]
+    \ 'coc-yaml',
+    \ ]
 
 " ----------------------------------------------
 " From README
