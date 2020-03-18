@@ -8,18 +8,21 @@ call plug#begin('~/nvim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'rizzatti/dash.vim'
 Plug 'ekalinin/dockerfile.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdTree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'junegunn/goyo.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'frazrepo/vim-rainbow'
-Plug 'patstockwell/vim-monokai-tasty'
+Plug 'vim-airline/vim-airline'
 Plug 'alvan/vim-closetag'
 "Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'patstockwell/vim-monokai-tasty'
 Plug 'sheerun/vim-polyglot'
+Plug 'frazrepo/vim-rainbow'
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 

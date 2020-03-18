@@ -1,8 +1,13 @@
-" ========================= Basic Settings =========================
+" ========================= General Settings =========================
 
 syntax enable		" enable syntax processing
 set number          " show number lines
 set relativenumber  " show number lines relative to cursor
+set autowrite       " automatically :write before running commands
+set nobackup
+set nowritebackup
+set noswapfile
+set textwidth=79    " make it obvious where 79 characters is
 
 " ========================= Indentation =========================
 
