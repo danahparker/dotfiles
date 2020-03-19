@@ -16,6 +16,7 @@ Plug 'scrooloose/nerdTree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'alvan/vim-closetag'
 "Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
@@ -41,6 +42,9 @@ let g:rainbow_activate = 1
 let g:rainbow_guifgs   = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 autocmd BufRead,BufNewFile * RainbowLoad
+
+" Vim Airline Airline ---------------------------------------
+let g:airline_theme='bubblegum'
 
 " Vim Monokai Tasty ---------------------------------------
 let g:vim_monokai_tasty_italic = 1       " allow italics, set this before the colorscheme
