@@ -19,6 +19,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'alvan/vim-closetag'
 "Plug 'ryanoasis/vim-devicons'
+Plug 'uiiaoo/java-syntax.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'patstockwell/vim-monokai-tasty'
