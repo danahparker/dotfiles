@@ -21,7 +21,7 @@ Plug 'alvan/vim-closetag'
 "Plug 'ryanoasis/vim-devicons'
 Plug 'uiiaoo/java-syntax.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'sheerun/vim-polyglot'
 Plug 'frazrepo/vim-rainbow'
@@ -81,9 +81,7 @@ nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
-nmap <C-s> <Plug>MarkdownPreview
-nmap <M-s> <Plug>MarkdownPreviewStop
-nmap <C-p> <Plug>MarkdownPreviewToggle
+nmap <C-m> <Plug>MarkdownPreview
 
 nmap <leader>g :Goyo<CR>
 
