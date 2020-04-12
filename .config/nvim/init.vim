@@ -85,7 +85,9 @@ nmap <C-m> <Plug>MarkdownPreview
 
 nmap <leader>g :Goyo<CR>
 
-nmap <leader>t :call TrimWhitespace()<CR>
+nmap <leader>t :tabnew<CR>
+
+nmap <leader>w :call TrimWhitespace()<CR>
 
 nnoremap <leader>. :CtrlPTag<cr>
 
