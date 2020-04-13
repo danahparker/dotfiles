@@ -99,7 +99,6 @@ nnoremap <leader>. :CtrlPTag<cr>
 let g:coc_global_extensions =[
     \ 'coc-go',
     \ 'coc-json',
-    \ 'coc-markdownlint',
     \ 'coc-pairs',
     \ 'coc-python',
     \ 'coc-tsserver',
