@@ -18,7 +18,7 @@ set shiftwidth=4    " number of spaces to use for each step of (auto)indent
 
 " ========================= Filetype-specific Indentation =========================
 
-autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2 textwidth=999
 autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " ========================= Keybindings =========================
