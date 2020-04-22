@@ -7,9 +7,11 @@ source ~/.vimrc
 call plug#begin('~/nvim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'ekalinin/dockerfile.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdTree'
@@ -37,6 +39,7 @@ call plug#end()
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI  = 1
 let NERDTreeDirArrows  = 1
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 " Rainbow Paraentheses ---------------------------------------
 let g:rainbow_activate = 1
@@ -45,11 +48,7 @@ let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 autocmd BufRead,BufNewFile * RainbowLoad
 
 " Vim Airline Airline ---------------------------------------
-let g:airline_theme='bubblegum'
-
-" Vim Monokai Tasty ---------------------------------------
-let g:vim_monokai_tasty_italic = 1       " allow italics, set this before the colorscheme
-colorscheme vim-monokai-tasty            " set the colorscheme
+let g:airline_theme = 'bubblegum'
 
 " Vim Closetag ---------------------------------------
 
@@ -68,9 +67,20 @@ function! TrimWhitespace()
     call winrestview(l:save)
 endfunction
 
+" changes colorscheme after <leader>bg
+" between light and dark
+function! ChangeColorscheme()
+    let &background = ( &background == "dark" ? "light" : "dark" )
+    if &background == 'light'
+        colorscheme morning
+    else
+        colorscheme vim-monokai-tasty
+    endif
+endfunction
+
 " ========================== Keybindings ==========================
 
-let mapleader=","
+let mapleader=" "
 
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
@@ -89,7 +99,18 @@ nmap <leader>t :tabnew<CR>
 
 nmap <leader>w :call TrimWhitespace()<CR>
 
-nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <C-p> :Files<cr>
+nnoremap <leader>. :Tags<cr>
+
+map <leader>bg :call ChangeColorscheme()<CR>
+
+" ========================== Colorscheme Settings ==========================
+
+if &background == 'light'
+    colorscheme morning
+else
+    colorscheme vim-monokai-tasty
+endif
 
 " ========================== coc.nvim Configuration ==========================
 
@@ -106,7 +127,7 @@ let g:coc_global_extensions =[
     \ ]
 
 " ----------------------------------------------
-" From README
+" From README (don't change)
 
 " TextEdit might fail if hidden is not set.
 set hidden
