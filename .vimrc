@@ -6,7 +6,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+
+
 " ========================== Plugins ==========================
+
+
 
 call plug#begin('~/nvim/plugged')
 
@@ -43,7 +47,11 @@ Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
-" ========================== Plugin Configurations ==========================
+
+
+" -========================== Plugin Configurations ==========================
+
+
 
 " NERDTree ---------------------------------------
 let NERDTreeShowHidden = 1
@@ -68,20 +76,24 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.md'
 " shortcut for closing HTML-like tags
 let g:closetag_shortcut = '>'
 
-" ========================= General Settings =========================
 
-" important
+
+" ============================= General Settings =============================
+
+
+
+"-- important
 set ttimeoutlen=0
 set updatetime=300
 
-" moving around, searching, and patterns
+"-- moving around, searching, and patterns
 set ignorecase      " ignore case when searching
 set smartcase       " override ignorecase when pattern has uppercase letters
 set incsearch       " show matches as search is being typed
 set hlsearch        " highlight matches of last search pattern
 set magic           " make bashslash in regex more predictable
 
-" displaying text
+"-- displaying text
 set number          " show number lines
 set relativenumber  " show number lines relative to cursor
 set scrolloff=7     " number of padding lines when vertical scrolling
@@ -89,24 +101,22 @@ set cmdheight=2     " number of lines in the command bar
 set wrap            " wrap long lines
 set linebreak       " wrap long lines at 'breakat' characters
 
-
-" terminal
+"-- terminal
 set t_Co=256
 
-" selecting text
+"-- selecting text
 set clipboard=unnamed       " allows vim to interact with system clipboard
 
-" editing text
+"-- editing text
 set backspace=eol,start,indent    " set backspace functionality in insert mode
 set showmatch                     " when inserting bracket, short jump to match
 set matchtime=2                   " 1/10 of a second to show match for 'showmatch'
-
 let g:default_text_width=79       " global variable to make editing this easier in the future
 let &textwidth=default_text_width " line length above with which to wrap a line
 
-" syntax, highlighting, and spelling
+"-- syntax, highlighting, and spelling
 syntax on                           " enable syntax processing
-setlocal spell                      " enable spell checking by default
+setlocal nospell                    " disable spell checking by default
 let &colorcolumn=default_text_width " 
 
 if &background == 'light'
@@ -115,7 +125,7 @@ else
     colorscheme vim-monokai-tasty   " set theme based on background setting
 endif
 
-" tabs and indenting
+"-- tabs and indenting
 set expandtab                      " tabs are spaces
 let g:default_tab_width=4          " global variable to make editing this easier in the future
 let &tabstop=default_tab_width     " number of visual spaces per TAB
@@ -125,7 +135,7 @@ set smarttab                       " on indent, tab inserts 'shiftwidth' number 
 set autoindent                     " automatically set indent of a new line
 set smartindent                    " use smart indenting (good for C-like languages)
 
-" reading / writing files
+"-- reading / writing files
 set fileformats=unix,dos,mac    " file formats to consider when editing a file
 set autoread                    " auto reread files changed externally
 set autowrite                   " automatically :write before running commands
@@ -133,10 +143,10 @@ set nobackup                    " do not keep backup after overwriting a file
 set nowritebackup               " do not write backup after overwriting a file
 set noswapfile                  " do not keep a swap file
 
-" multi-byte characters
+"-- multi-byte characters
 set encoding=utf-8
 
-" language-specific
+"-- language-specific
 
 " git
 let g:git_text_width=72
@@ -165,17 +175,20 @@ autocmd FileType html let &softtabstop=html_tabwidth
 autocmd FileType html let &tabstop=html_tabwidth
 autocmd FileType html set spell
 
-" ========================== Functions ==========================
 
-" Trim Whitespaces
+
+" ================================= Functions ================================
+
+
+
+" removes trailing whitespace on every line of the file
 function! TrimWhitespace()
     let l:save = winsaveview()
     %s/\\\@<!\s\+$//e
     call winrestview(l:save)
 endfunction
 
-" changes colorscheme after <leader>bg
-" between light and dark
+" changes colorscheme after <leader>bg between light and dark
 function! ChangeColorscheme()
     let &background = ( &background == "dark" ? "light" : "dark" )
     if &background == 'light'
@@ -185,20 +198,25 @@ function! ChangeColorscheme()
     endif
 endfunction
 
-" ========================== Keybindings ==========================
+
+
+" ================================ Keybindings ================================
+
+
 
 let mapleader=" "
 
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
-nmap <leader>q :NERDTreeToggle<CR>
+nmap <leader>n :NERDTreeToggle<CR>
 nmap <C-n> :NERDTreeToggle<CR>
 
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
-nmap <C-m> <Plug>MarkdownPreview
+nmap <leader>m <Plug>MarkdownPreview<CR>
+nmap <C-m> <Plug>MarkdownPreview<CR>
 
 nmap <leader>d :Dash<CR>
 
@@ -212,7 +230,7 @@ nmap <leader>t :tabnew<CR>
 
 nmap <leader>w :call TrimWhitespace()<CR>
 
-nnoremap <C-p> :Files<cr>
+nnoremap <leader>f :Files<cr>
 nnoremap <leader>. :Tags<cr>
 
 map <leader>bg :call ChangeColorscheme()<CR>
@@ -228,27 +246,13 @@ map k gk
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 " ========================== coc.nvim Configuration ==========================
+
+
+
+
+
+
 
 " ----------------------------------------------
 " Custom
