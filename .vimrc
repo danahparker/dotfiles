@@ -9,35 +9,41 @@ endif
 " ========================== Plugins ==========================
 
 call plug#begin('~/nvim/plugged')
-Plug 'jiangmiao/auto-pairs'
+
+" makes programming easier
+"Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rizzatti/dash.vim'
-Plug 'ekalinin/dockerfile.vim'
+Plug 'alvan/vim-closetag'
+Plug 'scrooloose/nerdcommenter'
+
+" git
+Plug 'tpope/vim-fugitive'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" navigation
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'scrooloose/nerdTree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdTree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" language
+Plug 'uiiaoo/java-syntax.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'ekalinin/dockerfile.vim'
+
+" colorscheme / style
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'alvan/vim-closetag'
-"Plug 'ryanoasis/vim-devicons'
-Plug 'uiiaoo/java-syntax.vim'
-Plug 'tpope/vim-fugitive'
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'sheerun/vim-polyglot'
 Plug 'frazrepo/vim-rainbow'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'junegunn/goyo.vim'
+"Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 " ========================== Plugin Configurations ==========================
-
-" deoplete ---------------------------------------
-"let g:deoplete#enable_at_startup = 1
 
 " NERDTree ---------------------------------------
 let NERDTreeShowHidden = 1
@@ -45,7 +51,7 @@ let NERDTreeMinimalUI  = 1
 let NERDTreeDirArrows  = 1
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
-" Rainbow Paraentheses ---------------------------------------
+" Rainbow Parentheses ---------------------------------------
 let g:rainbow_activate = 1
 let g:rainbow_guifgs   = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
@@ -64,26 +70,100 @@ let g:closetag_shortcut = '>'
 
 " ========================= General Settings =========================
 
-syntax enable       " enable syntax processing
+" important
+set ttimeoutlen=0
+set updatetime=300
+
+" moving around, searching, and patterns
+set ignorecase      " ignore case when searching
+set smartcase       " override ignorecase when pattern has uppercase letters
+set incsearch       " show matches as search is being typed
+set hlsearch        " highlight matches of last search pattern
+set magic           " make bashslash in regex more predictable
+
+" displaying text
 set number          " show number lines
 set relativenumber  " show number lines relative to cursor
-set autowrite       " automatically :write before running commands
-set nobackup
-set nowritebackup
-set noswapfile
-set textwidth=79    " make it obvious where 79 characters is
+set scrolloff=7     " number of padding lines when vertical scrolling
+set cmdheight=2     " number of lines in the command bar
+set wrap            " wrap long lines
+set linebreak       " wrap long lines at 'breakat' characters
 
-" ========================= Indentation =========================
 
-set expandtab       " tabs are spaces
-set tabstop=4       " number of visual spaces per TAB
-set softtabstop=4       " number of spaces in tab when editing
-set shiftwidth=4    " number of spaces to use for each step of (auto)indent
+" terminal
+set t_Co=256
 
-" ========================= Filetype-specific Indentation =========================
+" selecting text
+set clipboard=unnamed       " allows vim to interact with system clipboard
 
-autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2 textwidth=999
-autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
+" editing text
+set backspace=eol,start,indent    " set backspace functionality in insert mode
+set showmatch                     " when inserting bracket, short jump to match
+set matchtime=2                   " 1/10 of a second to show match for 'showmatch'
+
+let g:default_text_width=79       " global variable to make editing this easier in the future
+let &textwidth=default_text_width " line length above with which to wrap a line
+
+" syntax, highlighting, and spelling
+syntax on                           " enable syntax processing
+setlocal spell                      " enable spell checking by default
+let &colorcolumn=default_text_width " 
+
+if &background == 'light'
+    colorscheme morning
+else
+    colorscheme vim-monokai-tasty   " set theme based on background setting
+endif
+
+" tabs and indenting
+set expandtab                      " tabs are spaces
+let g:default_tab_width=4          " global variable to make editing this easier in the future
+let &tabstop=default_tab_width     " number of visual spaces per TAB
+let &softtabstop=default_tab_width " number of spaces in tab when editing
+let &shiftwidth=default_tab_width  " number of spaces to use for each step of (auto)indent
+set smarttab                       " on indent, tab inserts 'shiftwidth' number of spaces
+set autoindent                     " automatically set indent of a new line
+set smartindent                    " use smart indenting (good for C-like languages)
+
+" reading / writing files
+set fileformats=unix,dos,mac    " file formats to consider when editing a file
+set autoread                    " auto reread files changed externally
+set autowrite                   " automatically :write before running commands
+set nobackup                    " do not keep backup after overwriting a file
+set nowritebackup               " do not write backup after overwriting a file
+set noswapfile                  " do not keep a swap file
+
+" multi-byte characters
+set encoding=utf-8
+
+" language-specific
+
+" git
+let g:git_text_width=72
+autocmd FileType gitcommit let &textwidth=git_text_width
+autocmd FileType gitcommit let &colorcolumn=git_text_width
+
+" markdown
+let g:markdown_tabwidth=2
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd FileType markdown let &shiftwidth=markdown_tabwidth
+autocmd FileType markdown let &tabstop=markdown_tabwidth
+autocmd FileType markdown let &softtabstop=markdown_tabwidth
+autocmd FileType markdown let textwidth=999
+autocmd FileType markdown set spell
+
+" json
+let g:json_tabwidth=2
+autocmd FileType json let &shiftwidth=json_tabwidth
+autocmd FileType json let &tabstop=json_tabwidth
+autocmd FileType json let &softtabstop=json_tabwidth
+
+" html
+let g:html_tabwidth=2
+autocmd FileType html let &shiftwidth=html_tabwidth
+autocmd FileType html let &softtabstop=html_tabwidth
+autocmd FileType html let &tabstop=html_tabwidth
+autocmd FileType html set spell
 
 " ========================== Functions ==========================
 
@@ -120,13 +200,17 @@ nmap ++ <plug>NERDCommenterToggle
 
 nmap <C-m> <Plug>MarkdownPreview
 
+nmap <leader>d :Dash<CR>
+
 nmap <leader>g :Goyo<CR>
+
+nmap <leader>h :noh<CR>
+
+nmap <leader>ss :setlocal spell!<CR>
 
 nmap <leader>t :tabnew<CR>
 
 nmap <leader>w :call TrimWhitespace()<CR>
-
-nmap <leader>d :Dash<CR>
 
 nnoremap <C-p> :Files<cr>
 nnoremap <leader>. :Tags<cr>
@@ -134,14 +218,9 @@ nnoremap <leader>. :Tags<cr>
 map <leader>bg :call ChangeColorscheme()<CR>
 
 inoremap jk <ESC>
+map j gj
+map k gk
 
-" ========================== Colorscheme Settings ==========================
-
-if &background == 'light'
-    colorscheme morning
-else
-    colorscheme vim-monokai-tasty
-endif
 
 
 
