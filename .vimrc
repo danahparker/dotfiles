@@ -15,7 +15,7 @@ endif
 call plug#begin('~/nvim/plugged')
 
 " makes programming easier
-"Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rizzatti/dash.vim'
 Plug 'alvan/vim-closetag'
@@ -53,6 +53,9 @@ call plug#end()
 
 
 
+" Autopairs ---------------------------------------
+let g:AutoPairs = { '(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''" }
+
 " NERDTree ---------------------------------------
 let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI  = 1
@@ -65,7 +68,7 @@ let g:rainbow_guifgs   = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 autocmd BufRead,BufNewFile * RainbowLoad
 
-" Vim Airline Airline ---------------------------------------
+" Vim Airline ---------------------------------------
 let g:airline_theme = 'bubblegum'
 
 " Vim Closetag ---------------------------------------
@@ -228,14 +231,18 @@ nmap <leader>ss :setlocal spell!<CR>
 
 nmap <leader>t :tabnew<CR>
 
-nmap <leader>w :call TrimWhitespace()<CR>
+nmap <leader>w :w!<CR>
 
-nnoremap <leader>f :Files<cr>
+nmap <leader>sp :call TrimWhitespace()<CR>
+
+nmap <C-p> :Files<CR>
 nnoremap <leader>. :Tags<cr>
 
 map <leader>bg :call ChangeColorscheme()<CR>
 
 inoremap jk <ESC>
+inoremap kj <ESC>
+
 map j gj
 map k gk
 
@@ -363,7 +370,7 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap keys for applying codeAction to the current line.
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+"nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Introduce function text object
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
