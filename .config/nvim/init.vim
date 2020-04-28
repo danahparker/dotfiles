@@ -117,7 +117,7 @@ set clipboard=unnamed       " allows vim to interact with system clipboard
 set backspace=eol,start,indent    " set backspace functionality in insert mode
 set showmatch                     " when inserting bracket, short jump to match
 set matchtime=2                   " 1/10 of a second to show match for 'showmatch'
-let g:default_text_width=79       " global variable to make editing this easier in the future
+let g:default_text_width=80       " global variable to make editing this easier in the future
 let &textwidth=default_text_width " line length above with which to wrap a line
 
 "-- syntax, highlighting, and spelling
