@@ -1,7 +1,6 @@
 
 
 
-
 " ========================== Plugins ==========================
 
 
@@ -181,6 +180,13 @@ autocmd FileType html let &softtabstop=html_tabwidth
 autocmd FileType html let &tabstop=html_tabwidth
 autocmd FileType html set spell
 
+" javascript
+let g:javascript_tabwidth=2
+autocmd FileType javascript let &shiftwidth=javascript_tabwidth
+autocmd FileType javascript let &softtabstop=javascript_tabwidth
+autocmd FileType javascript let &tabstop=javascript_tabwidth
+autocmd FileType javascript set spell
+
 
 
 " ================================= Functions ================================
@@ -236,7 +242,6 @@ nmap <leader>t :tabnew<CR>
 
 nmap <leader>w :w!<CR>
 nmap <leader>q :q<CR>
-nmap <leader>wq :wq!<CR>
 
 nmap <leader>sp :call TrimWhitespace()<CR>
 
