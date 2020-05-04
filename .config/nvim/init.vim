@@ -8,7 +8,7 @@
 call plug#begin('~/nvim/plugged')
 
 " makes programming easier
-"Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rizzatti/dash.vim'
 Plug 'alvan/vim-closetag'
@@ -51,7 +51,7 @@ call plug#end()
 
 
 " Autopairs ---------------------------------------
-"let g:AutoPairs = { '(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''" }
+let g:AutoPairs = { '(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''" }
 
 " NERDTree ---------------------------------------
 
@@ -277,7 +277,6 @@ map k gk
 let g:coc_global_extensions =[
     \ 'coc-go',
     \ 'coc-json',
-    \ 'coc-pairs',
     \ 'coc-python',
     \ 'coc-tsserver',
     \ 'coc-yaml',
@@ -339,7 +338,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
