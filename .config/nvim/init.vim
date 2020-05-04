@@ -1,7 +1,9 @@
 
 
 
+
 " ========================== Plugins ==========================
+
 
 
 
@@ -14,7 +16,7 @@ Plug 'rizzatti/dash.vim'
 Plug 'alvan/vim-closetag'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
-
+Plug 'lilydjwg/colorizer'
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -51,7 +53,7 @@ call plug#end()
 
 
 " Autopairs ---------------------------------------
-let g:AutoPairs = { '(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''" }
+let g:AutoPairs = { '(':')', '[':']', '{':'}', '```':'```', '"""':'"""', "'''":"'''" }
 
 " NERDTree ---------------------------------------
 
@@ -80,8 +82,6 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.md'
 " shortcut for closing HTML-like tags
 
 let g:closetag_shortcut = '>'
-
-
 
 " ============================= General Settings =============================
 
@@ -130,6 +130,9 @@ else
     colorscheme vim-monokai-tasty   " set theme based on background setting
 endif
 
+"-- multiple windows
+set hidden
+
 "-- tabs and indenting
 set expandtab                      " tabs are spaces
 let g:default_tab_width=4          " global variable to make editing this easier in the future
@@ -150,6 +153,10 @@ set noswapfile                  " do not keep a swap file
 
 "-- multi-byte characters
 set encoding=utf-8
+
+"-- command line editing
+set shortmess+=c
+set signcolumn=yes
 
 "-- language-specific
 
@@ -263,16 +270,13 @@ map k gk
 
 
 
-" ========================== coc.nvim Configuration ==========================
+" ========================== coc.nvim Configuration & Keybindings ==========================
 
 
 
 
 
 
-
-" ----------------------------------------------
-" Custom
 
 let g:coc_global_extensions =[
     \ 'coc-go',
@@ -281,30 +285,6 @@ let g:coc_global_extensions =[
     \ 'coc-tsserver',
     \ 'coc-yaml',
     \ ]
-
-" ----------------------------------------------
-" From README (don't change)
-
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -332,9 +312,9 @@ else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" Use `[c` and `]c` to navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -379,7 +359,7 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap keys for applying codeAction to the current line.
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-"nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Introduce function text object
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -393,6 +373,7 @@ omap af <Plug>(coc-funcobj-a)
 " coc-tsserver, coc-python are the examples of servers that support it.
 nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
+xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
