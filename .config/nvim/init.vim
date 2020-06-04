@@ -48,7 +48,7 @@ call plug#end()
 
 
 
-" -========================== Plugin Configurations ==========================
+" ========================== Plugin Configurations ==========================
 
 
 
@@ -105,6 +105,7 @@ set scrolloff=7     " number of padding lines when vertical scrolling
 set cmdheight=2     " number of lines in the command bar
 set wrap            " wrap long lines
 set linebreak       " wrap long lines at 'breakat' characters
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:.
 
 "-- terminal
 set t_Co=256
@@ -124,11 +125,18 @@ syntax on                           " enable syntax processing
 setlocal nospell                    " disable spell checking by default
 let &colorcolumn=default_text_width "
 
-if &background == 'light'
+if &background == 'light' " set theme based on background setting
     colorscheme morning
 else
-    colorscheme vim-monokai-tasty   " set theme based on background setting
+    colorscheme vim-monokai-tasty
 endif
+
+augroup vimrc_todo " highlight todo-like keywords
+    au!
+    au Syntax * syn match MyTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE|XXX):/
+          \ containedin=.*Comment,vimCommentTitle
+augroup END
+hi def link MyTodo Todo
 
 "-- multiple windows
 set hidden
@@ -180,6 +188,12 @@ autocmd FileType json let &shiftwidth=json_tabwidth
 autocmd FileType json let &tabstop=json_tabwidth
 autocmd FileType json let &softtabstop=json_tabwidth
 
+" yaml
+let g:yaml_tabwidth=2
+autocmd FileType yaml let &shiftwidth=yaml_tabwidth
+autocmd FileType yaml let &tabstop=yaml_tabwidth
+autocmd FileType yaml let &softtabstop=yaml_tabwidth
+
 " html
 let g:html_tabwidth=2
 autocmd FileType html let &shiftwidth=html_tabwidth
@@ -194,9 +208,18 @@ autocmd FileType javascript let &softtabstop=javascript_tabwidth
 autocmd FileType javascript let &tabstop=javascript_tabwidth
 autocmd FileType javascript set spell
 
+" golang
+autocmd FileType go set noexpandtab
+
+
+
+
 
 
 " ================================= Functions ================================
+
+
+
 
 
 
@@ -252,7 +275,7 @@ nmap <leader>q :q<CR>
 
 nmap <leader>sp :call TrimWhitespace()<CR>
 
-nmap <C-p> :Files<CR>
+nmap <C-p> :GFiles<CR>
 nnoremap <leader>. :Tags<cr>
 
 map <leader>bg :call ChangeColorscheme()<CR>
