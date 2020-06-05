@@ -260,6 +260,11 @@ nmap ++ <plug>NERDCommenterToggle
 "nmap <leader>m <Plug>MarkdownPreview<CR>
 "nmap <C-m> <Plug>MarkdownPreview<CR>
 
+" vim fugitive
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gs :G<CR>
+
 nmap <leader>d :Dash<CR>
 
 nmap <leader>g :Goyo<CR>
@@ -282,9 +287,6 @@ map <leader>bg :call ChangeColorscheme()<CR>
 
 inoremap jk <ESC>
 inoremap kj <ESC>
-
-map j gj
-map k gk
 
 
 
