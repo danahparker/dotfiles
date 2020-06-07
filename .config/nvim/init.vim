@@ -206,7 +206,12 @@ let g:javascript_tabwidth=2
 autocmd FileType javascript let &shiftwidth=javascript_tabwidth
 autocmd FileType javascript let &softtabstop=javascript_tabwidth
 autocmd FileType javascript let &tabstop=javascript_tabwidth
-autocmd FileType javascript set spell
+
+" cpp
+let g:cpp_tabwidth=4
+autocmd FileType cpp let &shiftwidth=cpp_tabwidth
+autocmd FileType cpp let &softtabstop=cpp_tabwidth
+autocmd FileType cpp let &tabstop=cpp_tabwidth
 
 " golang
 autocmd FileType go set noexpandtab
@@ -304,6 +309,7 @@ inoremap kj <ESC>
 
 
 let g:coc_global_extensions =[
+    \ 'coc-clangd',
     \ 'coc-go',
     \ 'coc-json',
     \ 'coc-python',
