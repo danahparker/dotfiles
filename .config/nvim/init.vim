@@ -285,13 +285,10 @@ nmap <leader>q :q<CR>
 
 nmap <leader>sp :call TrimWhitespace()<CR>
 
-nmap <C-p> :GFiles<CR>
+nmap <C-p> :Files<CR>
 nnoremap <leader>. :Tags<cr>
 
 map <leader>bg :call ChangeColorscheme()<CR>
-
-inoremap jk <ESC>
-inoremap kj <ESC>
 
 
 
