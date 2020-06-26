@@ -276,12 +276,9 @@ nmap <leader>g :Goyo<CR>
 
 nmap <leader>h :noh<CR>
 
-nmap <leader>ss :setlocal spell!<CR>
-
 nmap <leader>t :tabnew<CR>
 
 nmap <leader>w :w!<CR>
-nmap <leader>q :q<CR>
 
 nmap <leader>sp :call TrimWhitespace()<CR>
 
