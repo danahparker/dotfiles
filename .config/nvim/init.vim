@@ -17,20 +17,20 @@ Plug 'alvan/vim-closetag'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'lilydjwg/colorizer'
+Plug 'vim-test/vim-test'
 
 " git
 Plug 'tpope/vim-fugitive'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " navigation
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'scrooloose/nerdTree'
+"Plug 'scrooloose/nerdTree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " language
 Plug 'uiiaoo/java-syntax.vim'
-"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'ekalinin/dockerfile.vim'
 Plug 'tpope/vim-markdown'
 
@@ -42,7 +42,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'frazrepo/vim-rainbow'
 Plug 'junegunn/goyo.vim'
 Plug 'altercation/vim-colors-solarized'
-"Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -253,39 +252,54 @@ endfunction
 
 let mapleader=" "
 
+" some coc-nvim stuff
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
-nmap <leader>n :NERDTreeToggle<CR>
-nmap <C-n> :NERDTreeToggle<CR>
+" file tree
+"nmap <leader>n :NERDTreeToggle<CR>
 
+" comments current line/highlight based on state of cursor
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
-
-"nmap <leader>m <Plug>MarkdownPreview<CR>
-"nmap <C-m> <Plug>MarkdownPreview<CR>
 
 " vim fugitive
 nmap <leader>gj :diffget //3<CR>
 nmap <leader>gf :diffget //2<CR>
 nmap <leader>gs :G<CR>
 
+" dash
 nmap <leader>d :Dash<CR>
 
+" goyo
 nmap <leader>g :Goyo<CR>
 
+" removes highlights
 nmap <leader>h :noh<CR>
 
+" creates a new tab
 nmap <leader>t :tabnew<CR>
 
+" saves files
 nmap <leader>w :w!<CR>
 
+" removes trailing whitespace
 nmap <leader>sp :call TrimWhitespace()<CR>
 
+" search files
 nmap <C-p> :Files<CR>
+
+" search ctags (i.e. search function name)
 nnoremap <leader>. :Tags<cr>
 
 map <leader>bg :call ChangeColorscheme()<CR>
+
+" vim-test
+nmap <leader>tn :TestNearest<CR>
+nmap <leader>tf :TestFile<CR>
+nmap <leader>ts :TestSuite<CR>
+nmap <leader>tl :TestLast<CR>
+nmap <leader>tv :TestVisit<CR>
 
 
 
@@ -297,13 +311,13 @@ map <leader>bg :call ChangeColorscheme()<CR>
 " ========================== coc.nvim Configuration & Keybindings ==========================
 
 
+" Personal Coc keybindings:
+nmap <space>e :CocCommand explorer<CR>
 
-
-
-
-
+" All of the coc extensions I use
 let g:coc_global_extensions =[
     \ 'coc-clangd',
+    \ 'coc-explorer',
     \ 'coc-go',
     \ 'coc-json',
     \ 'coc-python',
@@ -416,19 +430,19 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings using CoCList:
 " Show all diagnostics.
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+"nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+"" Manage extensions.
+"nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+"" Show commands.
+"nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+"" Find symbol of current document.
+"nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+"" Search workspace symbols.
+"nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+"" Do default action for next item.
+"nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+"" Do default action for previous item.
+"nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+"" Resume latest coc list.
+"nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 

@@ -1,4 +1,5 @@
 {
+  "clangd.path": "/Users/danaparker/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
   "languageserver": {
     "golang": {
       "command": "gopls",
@@ -28,5 +29,7 @@
 		"!Split",
 		"!Join sequence"
   ],
-  "clangd.path": "/Users/danaparker/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd"
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false
 }
