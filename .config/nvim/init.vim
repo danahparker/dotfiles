@@ -18,6 +18,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'lilydjwg/colorizer'
 Plug 'vim-test/vim-test'
+Plug 'jremmen/vim-ripgrep'
+Plug 'vuciv/vim-bujo'
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -29,10 +31,11 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" language
+" language-specific
 Plug 'uiiaoo/java-syntax.vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'tpope/vim-markdown'
+Plug 'tweekmonster/gofmt.vim'
 
 " colorscheme / style
 Plug 'vim-airline/vim-airline'
@@ -54,6 +57,16 @@ call plug#end()
 " Autopairs ---------------------------------------
 let g:AutoPairs = { '(':')', '[':']', '{':'}', '```':'```', '"""':'"""', "'''":"'''" }
 
+" fzf ---------------------------------------
+
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS='--reverse'
+
+" gofmt ---------------------------------------
+
+let g:gofmt_exe = 'gofmt'
+let g:gofmt_on_save = 1
+
 " NERDTree ---------------------------------------
 
 let NERDTreeShowHidden = 1
@@ -72,6 +85,12 @@ autocmd BufRead,BufNewFile * RainbowLoad
 
 let g:airline_theme = 'bubblegum'
 
+" Vim Bujo ---------------------------------------
+"
+nmap <Leader>bc <Plug>BujoChecknormal
+nmap <Leader>ba <Plug>BujoAddnormal
+let g:bujo#todo_file_path = $HOME . "/.cache/bujo"
+
 " Vim Closetag ---------------------------------------
 
 " file extensions where this plugin is enabled
@@ -82,7 +101,26 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.md'
 
 let g:closetag_shortcut = '>'
 
+
+
+
+
+
+
+
+
+
+
 " ============================= General Settings =============================
+
+
+
+
+
+
+
+
+
 
 
 
@@ -220,7 +258,7 @@ autocmd FileType go set noexpandtab
 
 
 
-" ================================= Functions ================================
+" ================================= Functions and Autocmds ================================
 
 
 
@@ -244,6 +282,10 @@ function! ChangeColorscheme()
     endif
 endfunction
 
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
+augroup END
 
 
 " ================================ Keybindings ================================
@@ -301,7 +343,14 @@ nmap <leader>ts :TestSuite<CR>
 nmap <leader>tl :TestLast<CR>
 nmap <leader>tv :TestVisit<CR>
 
+" search for word under cursor in help docs
+nnoremap <leader>ghw :h <C-R>=expand("<cword>")<CR><CR>
 
+" search for word under cursor with CocSearch
+nnoremap <leader>csw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+
+" search for word under cursor with Rg
+nnoremap <leader>rgw :Rg <C-R>=expand("<cword>")<CR><CR>
 
 
 
