@@ -14,8 +14,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rizzatti/dash.vim'
 Plug 'alvan/vim-closetag'
-Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'lilydjwg/colorizer'
 Plug 'vim-test/vim-test'
 Plug 'jremmen/vim-ripgrep'
@@ -300,10 +300,6 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
 " file tree
 "nmap <leader>n :NERDTreeToggle<CR>
-
-" comments current line/highlight based on state of cursor
-vmap ++ <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
 
 " vim fugitive
 nmap <leader>gj :diffget //3<CR>
