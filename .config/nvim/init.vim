@@ -7,6 +7,8 @@
 
 
 
+
+
 call plug#begin('~/nvim/plugged')
 
 " makes programming easier
@@ -20,22 +22,27 @@ Plug 'lilydjwg/colorizer'
 Plug 'vim-test/vim-test'
 Plug 'jremmen/vim-ripgrep'
 Plug 'vuciv/vim-bujo'
+Plug 'dense-analysis/ale'
 
 " git
 Plug 'tpope/vim-fugitive'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " navigation
 Plug 'christoomey/vim-tmux-navigator'
-"Plug 'scrooloose/nerdTree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" language-specific
+" misc languages
 Plug 'uiiaoo/java-syntax.vim'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'tpope/vim-markdown'
 Plug 'tweekmonster/gofmt.vim'
+
+" js / react
+Plug 'prettier/vim-prettier', {
+\ 'do': 'yarn install',
+\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'jparise/vim-graphql'
 
 " colorscheme / style
 Plug 'vim-airline/vim-airline'
@@ -69,10 +76,14 @@ let g:gofmt_on_save = 1
 
 " NERDTree ---------------------------------------
 
-let NERDTreeShowHidden = 1
-let NERDTreeMinimalUI  = 1
-let NERDTreeDirArrows  = 1
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+" let NERDTreeShowHidden = 1
+" let NERDTreeMinimalUI  = 1
+" let NERDTreeDirArrows  = 1
+" let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+
+" Prettier ---------------------------------------
+
+let g:prettier#autoformat_require_pragma = 0
 
 " Rainbow Parentheses ---------------------------------------
 
@@ -362,6 +373,7 @@ nmap <space>e :CocCommand explorer<CR>
 " All of the coc extensions I use
 let g:coc_global_extensions =[
     \ 'coc-clangd',
+    \ 'coc-css',
     \ 'coc-explorer',
     \ 'coc-go',
     \ 'coc-json',
@@ -369,6 +381,16 @@ let g:coc_global_extensions =[
     \ 'coc-tsserver',
     \ 'coc-yaml',
     \ ]
+
+" conditionally add prettier or eslint to Coc extentions
+" based on if either are present
+" if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+"   let g:coc_global_extensions += ['coc-prettier']
+" endif
+
+" if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+"   let g:coc_global_extensions += ['coc-eslint']
+" endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by

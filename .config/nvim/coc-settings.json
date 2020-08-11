@@ -10,6 +10,12 @@
       }
     }
   },
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "eslint.autoFixOnSave": true,
+  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "tsserver.formatOnType": true,
   "yaml.customTags": [
     "!Ref",
 		"!GetAtt",
@@ -28,8 +34,5 @@
 		"!Select",
 		"!Split",
 		"!Join sequence"
-  ],
-  "explorer.width": 30,
-  "explorer.icon.enableNerdfont": true,
-  "explorer.previewAction.onHover": false
+  ]
 }
