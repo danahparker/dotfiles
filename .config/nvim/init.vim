@@ -43,6 +43,7 @@ Plug 'prettier/vim-prettier', {
 \ 'do': 'yarn install',
 \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'jparise/vim-graphql'
+Plug 'mattn/emmet-vim'
 
 " colorscheme / style
 Plug 'vim-airline/vim-airline'
@@ -63,6 +64,10 @@ call plug#end()
 
 " Autopairs ---------------------------------------
 let g:AutoPairs = { '(':')', '[':']', '{':'}', '```':'```', '"""':'"""', "'''":"'''" }
+
+" emmet ---------------------------------------
+let g:user_emmet_mode='n'
+let g:user_emmet_leader_key=','
 
 " fzf ---------------------------------------
 
