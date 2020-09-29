@@ -1,15 +1,3 @@
-#---------------------------------
-#
-# ENVIRONMENT VARIABLES
-#
-#---------------------------------
-
-# MacOS
-if [ "$(uname)" == "Darwin" ]; then
-    export EDITOR=/usr/bin/vim
-    export JAVA_HOME=$(/usr/libexec/java_home)
-fi
-
 #----------------------------------
 #
 # GIT ALIASES
@@ -34,8 +22,8 @@ alias gco="git checkout"
 #
 #----------------------------------
 
-alias df='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ctags="`brew --prefix`/bin/ctags"
+alias df='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
+#alias ctags="`brew --prefix`/bin/ctags"
 alias v='nvim'
 
 #----------------------------------
@@ -45,10 +33,10 @@ alias v='nvim'
 #----------------------------------
 
 # Auto suggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Z
-. `brew --prefix`/etc/profile.d/z.sh
+#. `brew --prefix`/etc/profile.d/z.sh
 
 #---------------------------------
 #
@@ -56,7 +44,6 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 #
 #---------------------------------
 
-export ZSH="/Users/danaparker/.oh-my-zsh"
 ZSH_THEME=robbyrussell
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
@@ -65,14 +52,23 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy/mm/dd"
 plugins=(
   git
+  z
   zsh-autosuggestions
 )
 
+export ZSH="/home/danahparker/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 
+#---------------------------------
+#
+# OTHER
+#
+#---------------------------------
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+echo "~/.zshrc was sourced."
