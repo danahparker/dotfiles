@@ -111,7 +111,7 @@ let g:bujo#todo_file_path = $HOME . "/.cache/bujo"
 
 " file extensions where this plugin is enabled
 
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.md'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.md,*.js,*.jsx'
 
 " shortcut for closing HTML-like tags
 

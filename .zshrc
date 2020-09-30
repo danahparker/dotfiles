@@ -26,25 +26,13 @@ alias df='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 #alias ctags="`brew --prefix`/bin/ctags"
 alias v='nvim'
 
-#----------------------------------
-#
-# SOURCES
-#
-#----------------------------------
-
-# Auto suggestions
-#source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Z
-#. `brew --prefix`/etc/profile.d/z.sh
-
 #---------------------------------
 #
 # DEFAULT ZSHRC STUFF
 #
 #---------------------------------
 
-ZSH_THEME=robbyrussell
+ZSH_THEME=""
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
@@ -71,4 +59,29 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-echo "~/.zshrc was sourced."
+#----------------------------------
+#
+# PURE PROMPT
+#
+#----------------------------------
+
+# nodejs, npm, and pure-prompt
+# Install by `sudo apt install nodejs` and then `sudo apt install npm`
+# Then install `pure-prompt` (https://github.com/sindresorhus/pure)
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+zstyle :prompt:pure:git:stash show yes
+zstyle :prompt:pure:prompt:error color red
+zstyle :prompt:pure:prompt:success color green
+prompt pure
+
+#----------------------------------
+#
+# LS COLORS
+#
+#----------------------------------
+
+# Removes the background colors for any ls
+eval "$(dircolors -p | \
+    sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
+    dircolors /dev/stdin)"
