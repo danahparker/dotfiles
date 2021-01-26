@@ -25,6 +25,7 @@ alias gco="git checkout"
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 #alias ctags="`brew --prefix`/bin/ctags"
 alias v='nvim'
+alias psql-local='sudo -u postgres psql -p 5432 -h 127.0.0.1'
 
 #---------------------------------
 #
