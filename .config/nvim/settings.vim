@@ -117,5 +117,8 @@ autocmd FileType cpp let &shiftwidth=cpp_tabwidth
 autocmd FileType cpp let &softtabstop=cpp_tabwidth
 autocmd FileType cpp let &tabstop=cpp_tabwidth
 
+" py
+autocmd FileType py let &textwidth=999
+
 " golang
 autocmd FileType go set noexpandtab

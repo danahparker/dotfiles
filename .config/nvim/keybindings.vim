@@ -15,9 +15,6 @@ nmap <leader>d :Dash<CR>
 " removes highlights
 nmap <leader>h :noh<CR>
 
-" creates a new tab
-nmap <leader>t :tabnew<CR>
-
 " saves files
 nmap <leader>w :w!<CR>
 
@@ -40,3 +37,6 @@ nnoremap <leader>csw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 " search for word under cursor with Rg
 nnoremap <leader>rgw :Rg <C-R>=expand("<cword>")<CR><CR>
+
+" https://github.com/preservim/tagbar
+nmap <leader>t :TagbarToggle

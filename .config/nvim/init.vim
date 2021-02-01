@@ -15,6 +15,9 @@ Plug 'patstockwell/vim-monokai-tasty'
 Plug 'frazrepo/vim-rainbow'
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
+Plug 'dense-analysis/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'preservim/tagbar'
 " Plug 'chiel92/vim-autoformat'
 " Plug 'wellle/targets.vim'
 " Plug 'stefandtw/quickfix-reflector.vim'
@@ -26,3 +29,4 @@ source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/functions.vim
 source ~/.config/nvim/keybindings.vim
 source ~/.config/nvim/coc.vim
+source ~/.config/nvim/ale.vim
