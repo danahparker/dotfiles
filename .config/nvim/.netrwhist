@@ -1,4 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
-let g:netrw_dirhist_2='/mnt/d/repos/movetown'
-let g:netrw_dirhist_1='/mnt/d/repos/amazon-oa2-new-grad-questions'
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/Users/danapar/.workplace/scm-react-app/src/AWSSCMUIArgoTownsendIntegrationTests/cypress/integration'
+let g:netrw_dirhist_2='/Users/danapar/.workplace/scm-react-app/src/AWSSCMUIArgoTownsendIntegrationTests/cypress'
+let g:netrw_dirhist_1='/Users/danapar/.notes/002-approval-matrix'
+let g:netrw_dirhist_0='/Users/danapar/.notes/000-step-level-observers'
+let g:netrw_dirhist_9='/Users/danapar/.workplace/scm-react-app/src/AWSSCMUIArgoTownsendApp/src/gql/queries'
+let g:netrw_dirhist_8='/Users/danapar/.workplace/scm-prtl-dev-integ-test'
+let g:netrw_dirhist_7='/Users/danapar/.workplace/scm-prtl-dev-integ-test/src/AWSSCMUIArgoTownsendIntegrationTests/cypress'
+let g:netrw_dirhist_6='/Users/danapar/.workplace/scm-client-shared-roles/src/AWSSCMClientSharedRoles/configuration/cloudFormation'
+let g:netrw_dirhist_5='/Users/danapar/.config/nvim'
+let g:netrw_dirhist_4='/Users/danapar/.config'

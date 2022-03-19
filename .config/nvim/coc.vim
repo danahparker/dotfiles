@@ -13,20 +13,12 @@ let g:coc_global_extensions =[
     \ 'coc-eslint',
     \ 'coc-explorer',
     \ 'coc-go',
+    \ 'coc-java',
     \ 'coc-json',
+    \ 'coc-pairs',
     \ 'coc-tsserver',
-    \ 'coc-yaml',
+    \ 'coc-yaml'
     \ ]
-
-" conditionally add prettier or eslint to Coc extentions
-" based on if either are present
-" if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
-"   let g:coc_global_extensions += ['coc-prettier']
-" endif
-
-" if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
-"   let g:coc_global_extensions += ['coc-eslint']
-" endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by

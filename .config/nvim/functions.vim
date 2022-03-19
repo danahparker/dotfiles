@@ -9,3 +9,15 @@ augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
 augroup END
+
+function! ChangeColorscheme()
+    if &background ==? 'dark'
+        set background=light
+        colorscheme morning
+    else
+        set background=dark
+        colorscheme vim-monokai-tasty
+    endif
+endfunction
+
+map <leader>bg :call ChangeColorscheme()<CR>

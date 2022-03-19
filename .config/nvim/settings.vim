@@ -28,20 +28,21 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:.
 set t_Co=256
 
 "-- selecting text
-set clipboard=unnamed       " allows vim to interact with system clipboard
+set clipboard=unnamed   " allows vim to interact with system clipboard
 
 "-- editing text
 set backspace=eol,start,indent    " set backspace functionality in insert mode
 set showmatch                     " when inserting bracket, short jump to match
 set matchtime=2                   " 1/10 of a second to show match for 'showmatch'
-let g:default_text_width=80       " global variable to make editing this easier in the future
-let &textwidth=default_text_width " line length above with which to wrap a line
+let g:default_textwidth=100       " global variable to make editing this easier in the future
+let &textwidth=default_textwidth  " line length above with which to wrap a line
 
 "-- syntax, highlighting, and spelling
 syntax on                           " enable syntax processing
+au BufNewFile,BufRead,BufReadPost *.template set syntax=off
 setlocal nospell                    " disable spell checking by default
-let &colorcolumn=default_text_width "
-colorscheme vim-monokai-tasty
+let &colorcolumn=default_textwidth  " set visual bar for character linting limit
+colorscheme vim-monokai-tasty       " set default color scheme
 
 "-- multiple windows
 set hidden
@@ -73,52 +74,63 @@ set signcolumn=yes
 "-- language-specific
 
 " git
-let g:git_text_width=72
-autocmd FileType gitcommit let &textwidth=git_text_width
-autocmd FileType gitcommit let &colorcolumn=git_text_width
+let g:git_textwidth=72
+au FileType gitcommit let &textwidth=git_textwidth
+au FileType gitcommit let &colorcolumn=git_textwidth
 
 " markdown
-let g:markdown_tabwidth=2
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd FileType markdown let &shiftwidth=markdown_tabwidth
-autocmd FileType markdown let &tabstop=markdown_tabwidth
-autocmd FileType markdown let &softtabstop=markdown_tabwidth
-autocmd FileType markdown let &textwidth=999
-autocmd FileType markdown set spell
+let g:md_tabwidth=2
+let g:md_textwidth=999
+au BufNewFile,BufReadPost *.md set filetype=markdown
+au FileType markdown let &shiftwidth=md_tabwidth
+au FileType markdown let &tabstop=md_tabwidth
+au FileType markdown let &softtabstop=md_tabwidth
+au FileType markdown let &textwidth=md_textwidth
+au FileType markdown set spell
 
 " json
 let g:json_tabwidth=2
-autocmd FileType json let &shiftwidth=json_tabwidth
-autocmd FileType json let &tabstop=json_tabwidth
-autocmd FileType json let &softtabstop=json_tabwidth
+au FileType json let &shiftwidth=json_tabwidth
+au FileType json let &tabstop=json_tabwidth
+au FileType json let &softtabstop=json_tabwidth
 
 " yaml
 let g:yaml_tabwidth=2
-autocmd FileType yaml let &shiftwidth=yaml_tabwidth
-autocmd FileType yaml let &tabstop=yaml_tabwidth
-autocmd FileType yaml let &softtabstop=yaml_tabwidth
+au FileType yaml let &shiftwidth=yaml_tabwidth
+au FileType yaml let &tabstop=yaml_tabwidth
+au FileType yaml let &softtabstop=yaml_tabwidth
 
 " html
 let g:html_tabwidth=2
-autocmd FileType html let &shiftwidth=html_tabwidth
-autocmd FileType html let &softtabstop=html_tabwidth
-autocmd FileType html let &tabstop=html_tabwidth
-autocmd FileType html set spell
+au FileType html let &shiftwidth=html_tabwidth
+au FileType html let &softtabstop=html_tabwidth
+au FileType html let &tabstop=html_tabwidth
+au FileType html set spell
 
-" javascript
-let g:javascript_tabwidth=2
-autocmd FileType javascript let &shiftwidth=javascript_tabwidth
-autocmd FileType javascript let &softtabstop=javascript_tabwidth
-autocmd FileType javascript let &tabstop=javascript_tabwidth
+" javascript / ts / jsx
+let g:js_tabwidth=2
+au FileType javascript let &shiftwidth=js_tabwidth
+au FileType javascript let &softtabstop=js_tabwidth
+au FileType javascript let &tabstop=js_tabwidth
+au BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+au BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 " cpp
 let g:cpp_tabwidth=4
-autocmd FileType cpp let &shiftwidth=cpp_tabwidth
-autocmd FileType cpp let &softtabstop=cpp_tabwidth
-autocmd FileType cpp let &tabstop=cpp_tabwidth
+au FileType cpp let &shiftwidth=cpp_tabwidth
+au FileType cpp let &softtabstop=cpp_tabwidth
+au FileType cpp let &tabstop=cpp_tabwidth
+
+" java
+au FileType java let &colorcolumn=0
 
 " py
-autocmd FileType py let &textwidth=999
+let g:py_textwidth=999
+au FileType py let &textwidth=py_textwidth
 
 " golang
-autocmd FileType go set noexpandtab
+au FileType go set noexpandtab
+
+" txt
+let g:txt_textwidth=999
+au FileType txt setlocal &textwidth=txt_textwidth
