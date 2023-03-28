@@ -16,4 +16,3 @@ I use the following tools:
   - [porsmo](https://crates.io/crates/porsmo) (pomodoro timer)
   - [rg](https://github.com/BurntSushi/ripgrep) (best `grep` alternative)
   - [speedtest-rs](https://github.com/nelsonjchen/speedtest-rs) (better `ping` that uses speedtest.net)
-  - 
