@@ -160,6 +160,7 @@ alias cdsm="cd $WORKPLACE/AWSSCMChangeDefinitionService/src/AWSSCMChangeDefiniti
 
 alias rgf='rg --files | rg' # search file names
 
+# TODO $1 only works for single-word strings. Can we do multi-word?
 rgfs() {
     rg "$1" -g "*$2*" # search for string $1 in files whose names contain $2
 }
