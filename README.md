@@ -10,6 +10,7 @@ I use the following tools:
 - [zsh](https://www.zsh.org/) (my favorite shell)
   - with [oh-my-zsh](https://ohmyz.sh/)
 - [tmux](https://github.com/tmux/tmux/wiki) (my favorite terminal multiplexer)
+  - with [tpm](https://github.com/tmux-plugins/tpm)
 - [Rust CLI tools](https://crates.io/) (blazingly fast!)
   - [bat](https://github.com/sharkdp/bat) (better `cat`)
   - [exa](https://github.com/ogham/exa) (better `ls`)
