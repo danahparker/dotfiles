@@ -8,7 +8,7 @@ I use the following tools:
 - [zsh](https://www.zsh.org/)
   - with [oh-my-zsh](https://ohmyz.sh/)
 - [tmux](https://github.com/tmux/tmux/wiki)
-- Rust CLI tools
+- [Rust CLI tools](https://crates.io/)
   - [bat](https://github.com/sharkdp/bat) (better cat)
   - [exa](https://github.com/ogham/exa) (better ls)
   - [gitui](https://github.com/extrawurst/gitui) (git TUI)
