@@ -145,7 +145,6 @@ alias graph="cd $WORKPLACE/scm-graphql-lambda/src/AWSSCMUIPortalGraphQLLambda/sr
 alias react="cd $WORKPLACE/scm-react-app/src/AWSSCMUIArgoTownsendApp/src"
 alias integ="cd $WORKPLACE/scm-react-app/src/AWSSCMUIArgoTownsendIntegrationTests"
 alias ginteg="cd $WORKPLACE/scm-graphql-lambda/src/AWSSCMUIPortalGraphQLIntegrationTest/cypress/integration"
-# alias uiportal="cd $WORKPLACE/scm-prtl-app/src/AWSSCMUIPortal"
 alias mds="cd $WORKPLACE/scm-mds/src/AWSSCMMaterialDefinitionService"
 alias mdcs="cd $WORKPLACE/scm-mds/src/AWSSCMMaterialDefinitionChangeService"
 alias ams="cd $WORKPLACE/AWSSCMApprovalMatrixService/src/AWSSCMApprovalMatrixService"
@@ -160,8 +159,9 @@ alias cdsm="cd $WORKPLACE/AWSSCMChangeDefinitionService/src/AWSSCMChangeDefiniti
 #----------------------------------
 
 alias rgf='rg --files | rg' # search file names
+
 rgfs() {
-    rg -t js "$1" -g "*$2*" # search for $1 in files whose names contain $2
+    rg "$1" -g "*$2*" # search for string $1 in files whose names contain $2
 }
 
 #----------------------------------
@@ -176,7 +176,6 @@ alias e='exa -abghHliS'
 alias et='exa -abghHliS --long --tree'
 alias eg='exa -abghHliS --long --grid'
 alias ld="ls -ld $PWD/*"
-alias psql-local='sudo -u postgres psql -p 5432 -h 127.0.0.1'
 alias ta='tmux attach-session -t'
 alias tl='tmux ls'
 alias t="source $HOME/tmux-workplace-scripts/tmux-create-all.sh"
@@ -226,35 +225,6 @@ export PATH="/usr/local/Cellar/ruby@2.7/2.7.7/bin:$PATH"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-#----------------------------------
-#
-# PURE PROMPT
-#
-#----------------------------------
-
-# nodejs, npm, and pure-prompt
-# Install by `sudo apt install nodejs` and then `sudo apt install npm`
-# Then install `pure-prompt` (https://github.com/sindresorhus/pure)
-# fpath+=$HOME/.zsh/pure
-# autoload -U promptinit; promptinit
-# zstyle :prompt:pure:git:stash show yes
-# zstyle :prompt:pure:prompt:error color red
-# zstyle :prompt:pure:prompt:success color green
-# prompt pure
-
-#----------------------------------
-#
-# LS COLORS
-#
-#----------------------------------
-
-# Removes the background colors for any ls
-# eval "$(dircolors -p | \
-#     sed 's/ 4[0-9];/ 01;/; s/;4[0-9];/;01;/g; s/;4[0-9] /;01 /' | \
-#     dircolors /dev/stdin)"
-#
-#
 
 
 # POSTMAN SCRIPTS
