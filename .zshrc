@@ -13,15 +13,18 @@ alias gb="git branch"
 alias gbc="git branch | cat"
 alias gc="git commit"
 alias gco="git checkout"
+alias gcob="git checkout -b"
 alias gcom="git checkout $MAIN_BRANCH_NAME --"
 alias gd="git diff"
 alias gdc="git diff --cached"
+alias gpuom="git push -u origin main"
 alias gs="git status"
 alias gsh="git stash"
 alias gsha="git stash apply"
 alias gshs="git stash save"
 alias gshl="git stash list | cat"
-# alias gshpu="git stash push -m"
+alias gsw="git switch"
+alias gui="gitui"
 
 # ----------------------------------
 #
@@ -29,6 +32,9 @@ alias gshl="git stash list | cat"
 #
 # ----------------------------------
 
+alias check-tests='cd build/brazil-unit-tests; open all-tests.html; cd ..; cd ..'
+
+alias b='brazil-build'
 alias bb='brazil-build'
 alias bbap='brazil-build apollo-pkg'
 
@@ -44,7 +50,11 @@ alias bbc='brazil-build clean'
 alias bbcr='brazil-build cleaner'
 
 alias bbco='brazil-build cypress:open'
+
+alias bbdebug='brazil-build single-unit-test -Dtests.additional.jvmargs=“-Xrunjdwp:transport=dt_socket,server=y,address=localhost:58104”'
+
 alias bbi='brazil-build install'
+alias bbpw='brazil-build prod-watch'
 alias bbr='brazil-build release'
 alias bbs='brazil-build start'
 alias bbsa='brazil-build start:alpha'
@@ -58,7 +68,7 @@ alias bpcs='brazil-package-cache stop; brazil-package-cache start'
 
 alias bre='brazil-runtime-exec'
 alias brc='brazil-recursive-cmd'
-alias brcbb='brazil-recursive-cmd --allPackages brazil-build'
+alias brcbb='brazil-recursive-cmd brazil-build'
 
 alias bw='brazil ws'
 alias bwc='brazil ws create --root'
@@ -78,9 +88,9 @@ alias bwuvs='brazil ws use -vs'
 #----------------------------------
 
 export PATH=$HOME/.toolbox/bin:$PATH
-export HOSTNAME='dev-dsk-danapar-2b-96d2c982.us-west-2.amazon.com'
-export WORKPLACE="$HOME/.workplace"
-
+export HOSTNAME='dev-dsk-danapar-2b-8f7cb5e5.us-west-2.amazon.com'
+export EZ_HOSTNAME='danapar-clouddesk.aka.corp.amazon.com'
+export WORKPLACE="$HOME/workplace"
 
 export COGNITO_POOL_ID='us-west-2_cggGZ35hh'
 export COGNITO_POOL_ARN='arn:aws:cognito-idp:us-west-2:509020482313:userpool/us-west-2_cggGZ35hh'
@@ -92,12 +102,18 @@ export PORTAL_API_GATEWAY_DOMAIN_NAME='d-bxiff7y6j2.execute-api.us-west-2.amazon
 
 export ODIN_MATERIAL_SET_NAME='com.amazon.certificates.scm-portal-danapar-beta-pdx.aka.amazon.com-STANDARD_SSL_SERVER_INTERNAL_ENDPOINT-RSA-Chain'
 
+# Rio
+# https://code.amazon.com/packages/AWSSCMPLMDevTools/blobs/mainline/--/Readme.md
+source $HOME/workplace/DevTools/src/AWSSCMPLMDevTools/rio/rio.sh
+
 # https://code.amazon.com/packages/AWSSCMUIArgoTownsendAppDeploy/blobs/mainline/--/README.md
 export DEV_ARGO_STATIC_ASSETS_S3_BUCKET='scm-ui-danapar-static-assets-beta-us-west-2-0'
 export DEV_ARGO_DYN_RES_TAG_EXP_S3_BUCKET='scm-ui-danapar-dyn-res-tag-exprt-beta-us-west-2-0'
 
+# You will have to run `kinit -f && mwinit -o -s` in cloud desktop
+# (and probably local machine) for this to work.
 ninja-add-ws() {
-    ninja-dev-sync -add $WORKPLACE/$1 --add-host $HOSTNAME -add-remote /home/danapar/workplace/$1 -setup
+    ninja-dev-sync -add $WORKPLACE/$1 --add-host $EZ_HOSTNAME -add-remote /home/danapar/workplace/$1 -setup
 }
 
 brazil-full-sync() {
@@ -127,13 +143,15 @@ alias odin="ssh -fNL 2009:localhost:2009 $CLOUD_DESK"
 
 alias graph="cd $WORKPLACE/scm-graphql-lambda/src/AWSSCMUIPortalGraphQLLambda/src"
 alias react="cd $WORKPLACE/scm-react-app/src/AWSSCMUIArgoTownsendApp/src"
-alias integ="cd $WORKPLACE/scm-react-app/src/AWSSCMUIArgoTownsendIntegrationTests/cypress/integration"
+alias integ="cd $WORKPLACE/scm-react-app/src/AWSSCMUIArgoTownsendIntegrationTests"
 alias ginteg="cd $WORKPLACE/scm-graphql-lambda/src/AWSSCMUIPortalGraphQLIntegrationTest/cypress/integration"
 # alias uiportal="cd $WORKPLACE/scm-prtl-app/src/AWSSCMUIPortal"
 alias mds="cd $WORKPLACE/scm-mds/src/AWSSCMMaterialDefinitionService"
 alias mdcs="cd $WORKPLACE/scm-mds/src/AWSSCMMaterialDefinitionChangeService"
 alias ams="cd $WORKPLACE/AWSSCMApprovalMatrixService/src/AWSSCMApprovalMatrixService"
 alias amsd="cd $WORKPLACE/AWSSCMApprovalMatrixService/src/AWSSCMApprovalMatrixServiceDeploy"
+alias cds="cd $WORKPLACE/AWSSCMChangeDefinitionService/src/AWSSCMChangeDefinitionService"
+alias cdsm="cd $WORKPLACE/AWSSCMChangeDefinitionService/src/AWSSCMChangeDefinitionServiceModel"
 
 #----------------------------------
 #
@@ -141,11 +159,34 @@ alias amsd="cd $WORKPLACE/AWSSCMApprovalMatrixService/src/AWSSCMApprovalMatrixSe
 #
 #----------------------------------
 
+alias rgf='rg --files | rg' # search file names
+rgfs() {
+    rg -t js "$1" -g "*$2*" # search for $1 in files whose names contain $2
+}
+
+#----------------------------------
+#
+# OTHER ALIASES
+#
+#----------------------------------
+
+alias cfg='v ~/.config/nvim'
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
-alias v='nvim'
-alias vcfg='v ~/.config/nvim/init.vim'
-alias zrc='nvim ~/.zshrc'
+alias e='exa -abghHliS'
+alias et='exa -abghHliS --long --tree'
+alias eg='exa -abghHliS --long --grid'
+alias ld="ls -ld $PWD/*"
 alias psql-local='sudo -u postgres psql -p 5432 -h 127.0.0.1'
+alias ta='tmux attach-session -t'
+alias tl='tmux ls'
+alias t="source $HOME/tmux-workplace-scripts/tmux-create-all.sh"
+alias tk="source $HOME/tmux-workplace-scripts/tmux-kill-all.sh"
+alias v='nvim'
+alias zrc='nvim ~/.zshrc'
+
+fimport() {
+    ag ".*import.*$1.*"
+}
 
 
 #---------------------------------
@@ -180,6 +221,8 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/usr/local/Cellar/ruby@2.7/2.7.7/bin:$PATH"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -193,12 +236,12 @@ export PATH=/usr/local/bin:$PATH
 # nodejs, npm, and pure-prompt
 # Install by `sudo apt install nodejs` and then `sudo apt install npm`
 # Then install `pure-prompt` (https://github.com/sindresorhus/pure)
-fpath+=$HOME/.zsh/pure
-autoload -U promptinit; promptinit
-zstyle :prompt:pure:git:stash show yes
-zstyle :prompt:pure:prompt:error color red
-zstyle :prompt:pure:prompt:success color green
-prompt pure
+# fpath+=$HOME/.zsh/pure
+# autoload -U promptinit; promptinit
+# zstyle :prompt:pure:git:stash show yes
+# zstyle :prompt:pure:prompt:error color red
+# zstyle :prompt:pure:prompt:success color green
+# prompt pure
 
 #----------------------------------
 #
@@ -214,13 +257,8 @@ prompt pure
 #
 
 
-## POSTMAN SCRIPTS
-#
-
-
-
-
-export POSTMAN_ROOT=~/.workplace/TownsendDevices/src/TownsendDevices/postman
+# POSTMAN SCRIPTS
+export POSTMAN_ROOT=$WORKPLACE/TownsendDevices/src/TownsendDevices/postman
 
 function recreate_approval_matrices_helper_function {
     `isengardcli creds --role Admin $1`
@@ -252,3 +290,6 @@ function recreate_approval_matrices_lab_gamma {
 function recreate_approval_matrices_lab_prod {
     recreate_approval_matrices_helper_function scm-accts+prod-us-west-2-scm-appmat-cell-0010@amazon.com $POSTMAN_ROOT/environments/"Lab126 Prod (Cell 10).postman_environment.json"
 }
+
+# Starship intialization should go at the end of .zshrc
+eval "$(starship init zsh)"
