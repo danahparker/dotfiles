@@ -43,12 +43,12 @@ return packer.startup(function(use)
     use({
         "nvim-telescope/telescope-fzf-native.nvim",
         run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
-    }) -- fzf with telescope, TODO doesn't work for me atm
+    }) -- fzf with telescope
 
     -- Treesitter --
     use("nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' }) -- syntax highlighting + required for telescope
+    use("romgrk/nvim-treesitter-context") -- more treesitter
     use("p00f/nvim-ts-rainbow") -- rainbow paranthesis (requires treesitter)
-    use("romgrk/nvim-treesitter-context") -- TODO install these when internet isn't bad
 
     -- Git --
     use("lewis6991/gitsigns.nvim") -- see git highlights on LHS
