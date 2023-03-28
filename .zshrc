@@ -178,8 +178,8 @@ alias eg='exa -abghHliS --long --grid'
 alias ld="ls -ld $PWD/*"
 alias ta='tmux attach-session -t'
 alias tl='tmux ls'
-alias t="source $HOME/tmux-workplace-scripts/tmux-create-all.sh"
-alias tk="source $HOME/tmux-workplace-scripts/tmux-kill-all.sh"
+alias t="source $HOME/.tmux-workplace-scripts/tmux-create-all.sh"
+alias tk="source $HOME/.tmux-workplace-scripts/tmux-kill-all.sh"
 alias v='nvim'
 alias zrc='nvim ~/.zshrc'
 
