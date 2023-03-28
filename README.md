@@ -13,6 +13,7 @@ I use the following tools:
   - with [tpm](https://github.com/tmux-plugins/tpm)
 - [Rust CLI tools](https://crates.io/) (blazingly fast!)
   - [bat](https://github.com/sharkdp/bat) (better `cat`)
+  - [dust](https://github.com/bootandy/dust) (better `du`)
   - [exa](https://github.com/ogham/exa) (better `ls`)
   - [gitui](https://github.com/extrawurst/gitui) (git TUI)
   - [porsmo](https://crates.io/crates/porsmo) (pomodoro timer)
