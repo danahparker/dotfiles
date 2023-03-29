@@ -159,38 +159,6 @@ alias amsd="cd $WORKPLACE/AWSSCMApprovalMatrixService/src/AWSSCMApprovalMatrixSe
 alias cds="cd $WORKPLACE/AWSSCMChangeDefinitionService/src/AWSSCMChangeDefinitionService"
 alias cdsm="cd $WORKPLACE/AWSSCMChangeDefinitionService/src/AWSSCMChangeDefinitionServiceModel"
 
-#----------------------------------
-#
-# OTHER ALIASES
-#
-#----------------------------------
-
-alias rgf='rg --files | rg' # search file names
-
-# TODO $1 only works for single-word strings. Can we do multi-word?
-rgfs() {
-    rg "$1" -g "*$2*" # search for string $1 in files whose names contain $2
-}
-
-alias c='clear'
-alias cfg='v ~/.config/nvim'
-alias df='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
-alias e='exa -a --icons'
-alias el='exa -ahl --icons'
-alias et='exa -ahl --icons --tree'
-alias ls='exa -a --icons'
-alias rm="rip"
-alias ta='tmux attach-session -t'
-alias tl='tmux ls'
-alias t="source $HOME/.tmux-workplace-scripts/tmux-create-all.sh"
-alias tk="source $HOME/.tmux-workplace-scripts/tmux-kill-all.sh"
-alias v='nvim'
-alias zrc='nvim ~/.zshrc'
-
-fimport() {
-    ag ".*import.*$1.*"
-}
-
 
 #---------------------------------
 #
@@ -222,13 +190,11 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 #---------------------------------
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/usr/local/Cellar/ruby@2.7/2.7.7/bin:$PATH"
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 
 # POSTMAN SCRIPTS
 export POSTMAN_ROOT=$WORKPLACE/TownsendDevices/src/TownsendDevices/postman
@@ -268,3 +234,31 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /Users/danapar/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#----------------------------------
+#
+# OTHER ALIASES
+#
+#----------------------------------
+
+alias rgf='rg --files | rg' # search file names
+
+# TODO $1 only works for single-word strings. Can we do multi-word?
+rgfs() {
+    rg "$1" -g "*$2*" # search for string $1 in files whose names contain $2
+}
+
+alias c='clear'
+alias cfg='v ~/.config/nvim'
+alias df='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
+alias e='exa -a --icons'
+alias el='exa -ahl --icons'
+alias et='exa -ahl --icons --tree'
+alias ls='exa -a --icons'
+alias rm="rip"
+alias ta='tmux attach-session -t'
+alias tl='tmux ls'
+alias t="source $HOME/.tmux-workplace-scripts/tmux-create-all.sh"
+alias tk="source $HOME/.tmux-workplace-scripts/tmux-kill-all.sh"
+alias v='nvim'
+alias zrc='nvim ~/.zshrc'
