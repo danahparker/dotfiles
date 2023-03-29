@@ -172,17 +172,12 @@ rgfs() {
     rg "$1" -g "*$2*" # search for string $1 in files whose names contain $2
 }
 
-#----------------------------------
-#
-# OTHER ALIASES
-#
-#----------------------------------
-
+alias c='clear'
 alias cfg='v ~/.config/nvim'
 alias df='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
-alias e='exa -abghHliS'
-alias et='exa -abghHliS --long --tree'
-alias eg='exa -abghHliS --long --grid'
+alias e='exa -a --icons'
+alias el='exa -ahl --icons'
+alias et='exa -ahl --icons --tree'
 alias ld="ls -ld $PWD/*"
 alias ta='tmux attach-session -t'
 alias tl='tmux ls'
@@ -210,7 +205,6 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy/mm/dd"
 ZSH_DISABLE_COMPFIX="true"
 plugins=(
-  git
   z
   zsh-autosuggestions
 )
