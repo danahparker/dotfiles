@@ -17,6 +17,6 @@ I use the following tools:
   - [exa](https://github.com/ogham/exa) (better `ls`)
   - [gitui](https://github.com/extrawurst/gitui) (git TUI)
   - [porsmo](https://crates.io/crates/porsmo) (pomodoro timer)
+  - [rip](https://github.com/nivekuil/rip) (better `rm`)
   - [rg](https://github.com/BurntSushi/ripgrep) (best `grep` alternative)
   - [speedtest-rs](https://github.com/nelsonjchen/speedtest-rs) (better `ping` that uses speedtest.net)
-  - [starship](https://starship.rs/) (terminal prompt)
