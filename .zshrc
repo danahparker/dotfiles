@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #----------------------------------
 #
 # GIT ALIASES
@@ -195,7 +202,7 @@ fimport() {
 #
 #---------------------------------
 
-ZSH_THEME=""
+#ZSH_THEME="powerline10k/powerline10k"
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
@@ -261,6 +268,8 @@ function recreate_approval_matrices_lab_gamma {
 function recreate_approval_matrices_lab_prod {
     recreate_approval_matrices_helper_function scm-accts+prod-us-west-2-scm-appmat-cell-0010@amazon.com $POSTMAN_ROOT/environments/"Lab126 Prod (Cell 10).postman_environment.json"
 }
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-# Starship intialization should go at the end of .zshrc
-eval "$(starship init zsh)"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source /Users/danapar/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
