@@ -1,9 +1,10 @@
+
 -- Regular VIM
 require("main.vim-keymap");
 require("main.vim-settings");
 
 -- Plugins
-require("main.plugin-packer");
+require("main.plugin-lazy");
 require("main.plugin-telescope");
 require("main.plugin-harpoon");
 require("main.plugin-monokai")
@@ -14,6 +15,7 @@ require("main.plugin-gitsigns")
 require("main.plugin-toggleterm")
 require("main.plugin-tree")
 require("main.plugin-autotag")
+require("main.plugin-lualine")
 
 -- LSP
 require("main.lsp-mason")

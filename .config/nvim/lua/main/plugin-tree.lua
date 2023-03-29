@@ -10,13 +10,14 @@ tree.setup({
             resize_window = true
         }
     },
-    open_on_setup = false,
     view = {
         relativenumber = true,
-        width = 60
+        width = 30
     }
 })
 
 local nnoremap = require("main.vim-keymap").nnoremap
 
-nnoremap("<leader>t", "<cmd>NvimTreeToggle<CR>")
+nnoremap("<leader>t", "<cmd>NvimTreeFindFileToggle<CR>")
+
+require("nvim-tree.api").tree.close()

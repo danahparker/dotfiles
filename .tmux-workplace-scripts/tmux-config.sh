@@ -9,11 +9,11 @@ cd $config_folder
 tmux new-session -d -s $session_name
 
 window=0
-tmux rename-window 'nvim' 
-tmux send-keys 'nvim nvim/' C-m
+tmux rename-window 'config' 
+tmux send-keys 'exa --icons --tree nvim' C-m
 
 window=1
 tmux new-window -t $session_name:$window -n 'tmux' -c $tmux_config_folder
-tmux send-keys 'nvim .' C-m
+tmux send-keys 'exa --icons .' C-m
 
 tmux select-window -t 0

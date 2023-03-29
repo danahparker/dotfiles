@@ -5,26 +5,24 @@ if not ok then
 end
 
 configs.setup({
-    -- regular configuration --
-    ensure_installed = "all", -- one of "all", "maintained" (parsers w/ maintainers), or a list of languages
-    sync_install = false, -- install languages synchronously?
-    ignore_install = {""}, -- list of parsers to ignore installing
-    highlight = {
-        enable = true, -- enable the extention?
-        disable = {""}, -- list of languages that will be disabled
-        additional_vim_regex_highlighting = true,
+    -- list of parser names, or "all"
+    ensure_installed = {
+        "help",
+        "javascript",
+        "lua",
+        "typescript",
     },
-    indent = {
-        enable = true, -- keeps your cursor at indentation level you expect
-        disable = {"yaml"}, -- list of languages that auto-intendation will disabled
+    -- install languages synchronously?
+    sync_install = false,
+    -- enable the extention?
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
     },
     -- rainbow parentheses configuration
     rainbow = {
-        enable = true, -- enable rainbow parentheses
-        disable = {""}, -- list of languages you don't want rainbow parantheses for
-        extended_mode = true, -- also highlight non-bracket delimiters (e.g. html tags, boolean)
-        max_file_lines = nil, -- od not enable for files with more than n lines (int)
-        -- colors = {}, -- table of hex strings
-        -- termcolors = {}, -- table of color name strings
+        enable = true,
+        extended_mode = true,
+        max_file_lines = nil,
     },
 })
