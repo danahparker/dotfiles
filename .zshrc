@@ -178,7 +178,8 @@ alias df='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias e='exa -a --icons'
 alias el='exa -ahl --icons'
 alias et='exa -ahl --icons --tree'
-alias ld="ls -ld $PWD/*"
+alias ls='exa -a --icons'
+alias rm="rip"
 alias ta='tmux attach-session -t'
 alias tl='tmux ls'
 alias t="source $HOME/.tmux-workplace-scripts/tmux-create-all.sh"
