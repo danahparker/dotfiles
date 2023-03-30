@@ -10,10 +10,12 @@ configs.setup({
     -- list of parser names: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
     -- or replace object with "all"
     ensure_installed = {
+        "bash",
         "help",
         "java",
         "javascript",
         "lua",
+        "tsx",
         "typescript",
     },
     -- install languages synchronously?
