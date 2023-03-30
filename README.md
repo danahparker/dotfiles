@@ -28,7 +28,7 @@ I use the following tools:
   - [rip](https://github.com/nivekuil/rip) (better `rm`)
   - [rg](https://github.com/BurntSushi/ripgrep) (better `grep`)
   - [topgrade](https://github.com/topgrade-rs/topgrade) (helps upgrade CLI tools)
-  - [sd](https://github.com/chmln/sd)
+  - [sd](https://github.com/chmln/sd) (better `sed`)
   - [speedtest-rs](https://github.com/nelsonjchen/speedtest-rs) (better `ping` that uses speedtest.net)
   - [tldr](https://github.com/dbrgn/tealdeer) (better `man`)
   - [zoxide](https://github.com/ajeetdsouza/zoxide) (`cd` but from anywhere)
