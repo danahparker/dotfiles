@@ -107,7 +107,7 @@ lspconfig.cucumber_language_server.setup({ on_attach = M.on_attach })
 lspconfig.eslint.setup({ on_attach = M.on_attach })
 lspconfig.graphql.setup({ on_attach = M.on_attach })
 lspconfig.html.setup({ on_attach = M.on_attach })
-lspconfig.jdtls.setup({ on_attach = M.on_attach })
+-- lspconfig.jdtls.setup({ on_attach = M.on_attach })
 lspconfig.jsonls.setup({ on_attach = M.on_attach })
 lspconfig.lua_ls.setup({
     on_attach = M.on_attach,

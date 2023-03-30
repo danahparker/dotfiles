@@ -10,6 +10,7 @@ local jdtls_dir = nvim_dir .. "/mason/packages/jdtls"
 local config_dir = jdtls_dir .. "/config_mac"
 local plugins_dir = jdtls_dir .. "/plugins"
 local path_to_jar = plugins_dir .. "/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar"
+local path_to_lombok = jdtls_dir .. "/lombok.jar"
 
 local root_markers = {
     ".git",
@@ -26,9 +27,21 @@ local workspace_dir = nvim_dir .. "/site/java/workspace-root/" .. project_name
 os.execute("mkdir " .. workspace_dir)
 
 local config = {
+    log_level = vim.lsp.protocol.MessageType.Log,
+    log_file = '/Users/danapar/jdtls.log',
     on_attach = M.on_attach,
     cmd = {
         '/usr/bin/java',
+        '-Declipse.application=org.eclipse.jdt.ls.core.id1',
+        '-Dosgi.bundles.defaultStartLevel=4',
+        '-Declipse.product=org.eclipse.jdt.ls.core.product',
+        '-Dlog.protocal=true',
+        '-Dlog.level=ALL',
+        '-javaagent:' .. path_to_lombok,
+        '-Xmslg',
+        '--add-modules=ALL-SYSTEM',
+        '--add-opens', 'java.base/java.util=ALL-UNNAMED',
+        '--add-opens', 'java.base/java.long=ALL-UNNAMED',
         '-jar', path_to_jar,
         '-configuration', config_dir,
         '-data', workspace_dir,
