@@ -4,6 +4,16 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+eval "$(zoxide init zsh)"
+in() {
+    inlyne "$1" --theme dark
+}
+alias tn='tmux new -s $(basename "`pwd`")'
+
+# ~/.tmux/plugins
+export PATH=$HOME/.tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
+# ~/.config/tmux/plugins
+export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 
 #----------------------------------
 #
@@ -174,7 +184,6 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy/mm/dd"
 ZSH_DISABLE_COMPFIX="true"
 plugins=(
-  z
   zsh-autosuggestions
 )
 
@@ -256,11 +265,13 @@ alias e='exa -a --icons'
 alias el='exa -ahl --icons'
 alias et='exa -ahl --icons --tree'
 alias ls='exa -a --icons'
+alias ps='procs'
 alias rm="rip"
+alias sed='sd'
 alias ta='tmux attach-session -t'
 alias tl='tmux ls'
-alias t="source $HOME/.tmux-workplace-scripts/tmux-create-all.sh"
+alias tca="source $HOME/.tmux-workplace-scripts/tmux-create-all.sh"
 alias tk="tmux kill-session -t"
-alias tka="source $HOME/.tmux-workplace-scripts/tmux-kill-all.sh"
+alias tka="pkill -f tmux"
 alias v='nvim'
 alias zrc='nvim ~/.zshrc'
