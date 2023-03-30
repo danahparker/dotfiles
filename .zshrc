@@ -193,6 +193,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/usr/local/Cellar/ruby@2.7/2.7.7/bin:$PATH"
+export PATH="/Users/danapar/.local/share/nvim/mason/packages/jdtls/lombok.jar:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

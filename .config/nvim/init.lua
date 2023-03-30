@@ -21,3 +21,4 @@ require("main.plugin-tmux")
 -- LSP
 require("main.lsp-mason")
 require("main.lsp-null-ls")
+require("main.lsp-jdtls")
