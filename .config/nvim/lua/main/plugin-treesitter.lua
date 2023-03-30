@@ -1,3 +1,5 @@
+-- Config file for nvim-treesitter plugin:
+-- https://github.com/nvim-treesitter/nvim-treesitter
 local ok, configs = pcall(require, "nvim-treesitter.configs")
 if not ok then
     print("treesitter configs NOT ok")
@@ -5,9 +7,11 @@ if not ok then
 end
 
 configs.setup({
-    -- list of parser names, or "all"
+    -- list of parser names: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
+    -- or replace object with "all"
     ensure_installed = {
         "help",
+        "java",
         "javascript",
         "lua",
         "typescript",
