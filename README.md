@@ -16,7 +16,6 @@ I use the following tools:
 - [Rust CLI tools](https://crates.io/)
   - [bat](https://github.com/sharkdp/bat) (better `cat`)
   - [delta](https://github.com/dandavison/delta) (better git highlighting)
-  - [dmux](https://github.com/zdcthomas/dmux) (tmux session presets)
   - [dust](https://github.com/bootandy/dust) (better `du`)
   - [exa](https://github.com/ogham/exa) (better `ls`)
   - [fd](https://github.com/sharkdp/fd) (better `find`)
