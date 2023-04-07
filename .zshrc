@@ -20,49 +20,6 @@ export PATH=$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH
 
 #=========================================================
 #
-# PERSONAL ALIASES
-#
-#=========================================================
-
-# Ctrl + l doesn't work when using vim-tmux-navigator
-alias c='clear'
-# Default exa command. Mimics ld
-alias e='exa -a --icons'
-# Mimics ls -l
-alias el='exa -ahl --icons'
-# View file structure in a tree view
-alias et='exa -ahl --icons --tree'
-# inlyne command alias to always use dark theme
-in() {
-    inlyne "$1" --theme dark
-}
-# Replace ls with exa.
-alias ls='exa -a --icons'
-# Replace ps command with procs
-alias ps='procs'
-# Replace rm command with rip
-alias rm="rip"
-# Replace sed command with sd
-alias sed='sd'
-# Attach to tmux session with ta <session-name>
-alias ta='tmux attach-session -t'
-# Open preset tmux sessions
-alias tca="source $HOME/.tmux-workplace-scripts/tmux-create-all.sh"
-# Kill a specific tmux session with tk <session-name>
-alias tk="tmux kill-session -t"
-# Kill all tmux sessions
-alias tka="pkill -f tmux"
-# List all tmux sessions
-alias tl='tmux ls'
-# Create new tmux session with session name being the current directory
-alias tn='tmux new -s $(basename "`pwd`")'
-# Open NeoVim with v
-alias v='nvim'
-# Open this file
-alias zrc="nvim $HOME/.zshrc"
-
-#=========================================================
-#
 # GIT ALIASES
 #
 #=========================================================
@@ -71,6 +28,9 @@ export MAIN_BRANCH_NAME='mainline'
 
 alias g='git'
 alias ga="git add"
+alias gap="git add -p"
+alias gau="git add -u"
+alias gaup="git add -u -p"
 alias gb="git branch"
 alias gbc="git branch | cat"
 alias gc="git commit"
@@ -79,6 +39,7 @@ alias gcob="git checkout -b"
 alias gcom="git checkout $MAIN_BRANCH_NAME --"
 alias gd="git diff"
 alias gdc="git diff --cached"
+alias gdom="git diff origin/$MAIN_BRANCH_NAME"
 #alias gpuom="git push -u origin main"
 alias gs="git status"
 alias gsh="git stash"
@@ -142,6 +103,7 @@ alias bwu='brazil ws use'
 alias bwup='brazil ws use -p'
 alias bwuv='brazil ws use -vs'
 alias bwuvs='brazil ws use -vs'
+alias bbv='brazil-build visualize'
 # Steps to do a full sync/clean/install
 brazil-full-sync() {
     brazil ws sync --md
@@ -202,6 +164,29 @@ source $HOME/workplace/DevTools/src/AWSSCMPLMDevTools/rio/rio.sh
 # https://code.amazon.com/packages/AWSSCMUIArgoTownsendAppDeploy/blobs/mainline/--/README.md
 export DEV_ARGO_STATIC_ASSETS_S3_BUCKET='scm-ui-danapar-static-assets-beta-us-west-2-0'
 export DEV_ARGO_DYN_RES_TAG_EXP_S3_BUCKET='scm-ui-danapar-dyn-res-tag-exprt-beta-us-west-2-0'
+# Open code.amazon.com page for current package
+open-repo() {
+    local repo=$(echo `pwd`| awk -F'/' '{print $7}')
+    open https://code.amazon.com/packages/$repo/trees/$(git rev-parse --abbrev-ref HEAD)
+}
+# Search code.amazon.com page for a package with input string
+search-repo() {
+    open "https://code.amazon.com/search?utf8=✓&term=&exact=&filepath=&repository=*$1*&group=&source_component_type=&graph_type=&ext=&commit=Search"
+}
+# Open code.amazon.com page for a given file
+# open-amazon-file() {
+#   if [[ -n "$(alias find 2>/dev/null)" ]]; then
+#       unalias find
+#   fi
+#   if [[ -n "$(alias sed 2>/dev/null)" ]]; then
+#       unalias sed
+#   fi
+#   local filename=$1
+#   local repo_name=$(echo `pwd`| awk -F'/' '{print $5}')
+#   local base_path=$(pwd | awk -F '/AWSSCMChangeDefinitionService/' '{print $1"/AWSSCMChangeDefinitionService/"$2}')
+#   local url="https://code.amazon.com/packages/$repo_name/blobs/mainline/--/$(realpath --relative-to="$base_path" "$filename" | sed 's/\.java//g')"
+#   open "$url"
+# }
 # Add directory to ninja dev sync
 # You will have to run `kinit -f && mwinit -o -s` in cloud desktop
 # (and probably local machine) for this to work.
@@ -289,6 +274,45 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 #=========================================================
 #
+# PERSONAL ALIASES
+#
+#=========================================================
+
+# Open alacritty configuration
+alias arc="nvim $HOME/.alacritty.yml"
+# Ctrl + l doesn't work when using vim-tmux-navigator
+alias c='clear'
+# Default exa command. Mimics ld
+alias e='exa -a --icons'
+# Mimics ls -l
+alias el='exa -ahl --icons'
+# View file structure in a tree view
+alias et='exa -ahl --icons --tree'
+# inlyne command alias to always use dark theme
+in() {
+    inlyne "$1" --theme dark
+}
+# Replace ls with exa.
+alias ls='exa -a --icons'
+# Attach to tmux session with ta <session-name>
+alias ta='tmux attach-session -t'
+# Open preset tmux sessions
+alias tca="source $HOME/.tmux-workplace-scripts/tmux-create-all.sh"
+# Kill a specific tmux session with tk <session-name>
+alias tk="tmux kill-session -t"
+# Kill all tmux sessions
+alias tka="pkill -f tmux"
+# List all tmux sessions
+alias tl='tmux ls'
+# Create new tmux session with session name being the current directory
+alias tn='tmux new -s $(basename "`pwd`")'
+# Open NeoVim with v
+alias v='nvim'
+# Open this file
+alias zrc="nvim $HOME/.zshrc"
+
+#=========================================================
+#
 # LEAVE THESE AT THE BOTTOM OF ZSHRC
 #
 #=========================================================
@@ -297,5 +321,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # Source zsh syntax highlighting for when typing commands
 source /Users/danapar/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# Source fzf which is needed for some utilities of mine
+# Source fzf and provide alias for ez upgrade
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias fzf-upgrade="cd $HOME/.fzf && git pull && ./install"
