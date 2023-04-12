@@ -9,7 +9,7 @@ local nnoremap = require("main.vim-keymap").nnoremap
 
 nnoremap("<leader>a", function() mark.add_file() end)
 nnoremap("<C-e>", function() ui.toggle_quick_menu() end)
-nnoremap("<C-h>", function() ui.nav_file(1) end)
-nnoremap("<C-j>", function() ui.nav_file(2) end)
-nnoremap("<C-k>", function() ui.nav_file(3) end)
-nnoremap("<C-l>", function() ui.nav_file(4) end)
+nnoremap("<C-v>", function() ui.nav_file(1) end)
+nnoremap("<C-b>", function() ui.nav_file(2) end)
+nnoremap("<C-n>", function() ui.nav_file(3) end)
+nnoremap("<C-m>", function() ui.nav_file(4) end)
