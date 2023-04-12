@@ -13,6 +13,8 @@ I use the following tools:
   - with [oh-my-zsh](https://ohmyz.sh/)
 - [tmux](https://github.com/tmux/tmux/wiki) (my favorite terminal multiplexer)
   - with [tpm](https://github.com/tmux-plugins/tpm)
+- i3-like tile manager:
+  - [yabai](https://github.com/koekeishiya/yabai) + [skhd](https://github.com/koekeishiya/yabai)
 - [Rust CLI tools](https://crates.io/)
   - [bat](https://github.com/sharkdp/bat) (better `cat`)
   - [delta](https://github.com/dandavison/delta) (better git highlighting)
