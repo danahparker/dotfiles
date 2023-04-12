@@ -17,6 +17,7 @@ require("main.plugin-tree")
 require("main.plugin-autotag")
 require("main.plugin-lualine")
 require("main.plugin-tmux")
+require("main.plugin-fugitive")
 
 -- LSP
 require("main.lsp-mason")

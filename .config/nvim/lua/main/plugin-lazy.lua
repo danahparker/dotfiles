@@ -21,6 +21,7 @@ local plugins = {
     "romgrk/nvim-treesitter-context",           -- treesitter: more treesitter
     "p00f/nvim-ts-rainbow",                     -- treesitter: rainbow paranthesis (requires treesitter)
     "lewis6991/gitsigns.nvim",                  -- git: see git highlights on LHS
+    "tpope/vim-fugitive",                       -- git: some other good git commands
     "hrsh7th/nvim-cmp",                         -- autocomplete: main plugin
     "hrsh7th/cmp-buffer",                       -- autocomplete: buffer completions
     "hrsh7th/cmp-path",                         -- autocomplete: path completions
