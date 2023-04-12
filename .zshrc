@@ -80,7 +80,6 @@ alias bbbw='brazil-build beta-watch'
 alias bblt='brazil-build local-test'
 alias bblw='brazil-build local-watch'
 alias bbpw='brazil-build prod-watch'
-alias odin="ssh -fNL 2009:localhost:2009 $CLOUD_DESK" # Get odin material set for integration tests
 # brazil test aliases
 alias bbt='brazil-build test'
 alias bbto='brazil-build test:once'
@@ -159,6 +158,8 @@ export PORTAL_DOMAIN_NAME='scm-portal-danapar-beta-pdx.aka.amazon.com'
 export PORTAL_API_GATEWAY_DOMAIN_NAME='d-bxiff7y6j2.execute-api.us-west-2.amazonaws.com'
 # Odin material set env variable
 export ODIN_MATERIAL_SET_NAME='com.amazon.certificates.scm-portal-danapar-beta-pdx.aka.amazon.com-STANDARD_SSL_SERVER_INTERNAL_ENDPOINT-RSA-Chain'
+# Get odin material set for integration tests
+alias odin="ssh -fNL 2009:localhost:2009 $CLOUD_DESK"
 # Rio documentation: https://code.amazon.com/packages/AWSSCMPLMDevTools/blobs/mainline/--/Readme.md
 source $HOME/workplace/DevTools/src/AWSSCMPLMDevTools/rio/rio.sh
 # https://code.amazon.com/packages/AWSSCMUIArgoTownsendAppDeploy/blobs/mainline/--/README.md
