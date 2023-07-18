@@ -32,7 +32,6 @@ mason.setup({
 mason_lspconfig.setup({
     ensure_installed = {
         "bashls",
-        "cucumber_language_server",
         "eslint",
         "graphql",
         "html",

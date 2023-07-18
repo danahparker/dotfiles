@@ -11,12 +11,13 @@ configs.setup({
     -- or replace object with "all"
     ensure_installed = {
         "bash",
-        "help",
         "java",
         "javascript",
         "lua",
+        "python",
         "tsx",
         "typescript",
+        "vimdoc",
     },
     -- install languages synchronously?
     sync_install = false,

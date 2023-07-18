@@ -36,3 +36,6 @@ I use the following tools:
   - [speedtest-rs](https://github.com/nelsonjchen/speedtest-rs) (better `ping` that uses speedtest.net)
   - [tldr](https://github.com/dbrgn/tealdeer) (better `man`)
   - [zoxide](https://github.com/ajeetdsouza/zoxide) (`cd` but from anywhere)
+- etc
+  - [Alfred](https://www.alfredapp.com/) (better Spotlight)
+  - [Notion](https://www.notion.so/) (note taking)

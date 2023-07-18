@@ -168,11 +168,15 @@ export DEV_ARGO_DYN_RES_TAG_EXP_S3_BUCKET='scm-ui-danapar-dyn-res-tag-exprt-beta
 # Open code.amazon.com page for current package
 open-repo() {
     local repo=$(echo `pwd`| awk -F'/' '{print $7}')
+    local branch=$(git rev-parse --abbrev-ref HEAD)
     open https://code.amazon.com/packages/$repo/trees/$(git rev-parse --abbrev-ref HEAD)
 }
 # Search code.amazon.com page for a package with input string
 search-repo() {
     open "https://code.amazon.com/search?utf8=✓&term=&exact=&filepath=&repository=*$1*&group=&source_component_type=&graph_type=&ext=&commit=Search"
+}
+open-td-sim() {
+open "https://sim.amazon.com/issues/TOWNSENDDEVICES-$1"
 }
 # Open code.amazon.com page for a given file
 # open-amazon-file() {
@@ -311,6 +315,7 @@ alias tn='tmux new -s $(basename "`pwd`")'
 alias v='nvim'
 # Open this file
 alias zrc="nvim $HOME/.zshrc"
+ 
 
 #=========================================================
 #
