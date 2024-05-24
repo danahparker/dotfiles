@@ -18,6 +18,14 @@ I am on MacOS as of now, so I use homebrew as my package manager.
 brew install git
 ```
 
+### NeoVim
+
+My text editor of choice.
+
+```sh
+brew install neovim
+```
+
 ### stow
 
 What I use to manage these dotfiles.
