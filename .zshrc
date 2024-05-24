@@ -9,6 +9,7 @@ fi
 export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/bin:$PATH"
 
+export DF="$HOME/dotfiles/"
 export EDITOR='/usr/local/bin/nvim'
 export GOPATH="$HOME/go"
 export NVIM="$HOME/.config/nvim"
@@ -44,12 +45,8 @@ alias gshl="git stash list | cat"
 alias gsw="git switch"
 alias gui="gitui"
 
-# exa aliases
-alias e='exa -a --icons'
-alias el='exa -ahl --icons'
-alias et='exa -h --icons --tree'
-alias l='exa -ahl --icons'
-alias ls='exa -a --icons'
+# eza aliases
+alias ls='eza --all --icons=always'
 
 # random aliases
 alias ..='cd ..'
@@ -93,3 +90,22 @@ eval "$(fzf --zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # load nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # load nvm bash_completion
+
+# history setup for autocomplete
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+# auto suggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# syntax highlighting
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
