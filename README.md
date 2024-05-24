@@ -9,7 +9,7 @@ All of my dotfile configurations for programming and whatnot
 brew tap homebrew/cask-fonts
 brew install git neovim stow tmux powerlevel10k zsh-autosuggestions zsh-syntax-highlighting fzf eza zoxide font-meslo-lg-nerd-font
 brew install --cask wezterm
-git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
+git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
 ```
 
 ## Installation
