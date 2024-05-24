@@ -46,6 +46,7 @@ alias gsw="git switch"
 alias gui="gitui"
 
 # eza aliases
+alias l='eza --long --all --icons=always'
 alias ls='eza --all --icons=always'
 
 # random aliases
