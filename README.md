@@ -15,7 +15,7 @@ Clone the repo
 
 ```sh
 cd $HOME
-git clone TODO add repo
+gh repo clone danahparker/dotfiles
 cd dotfiles
 ```
 
