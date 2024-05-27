@@ -42,6 +42,11 @@ default=(
 )
 sketchybar --default "${default[@]}"
 
+##### Left-side items #####
+
+source $ITEM_DIR/spaces.sh
+#source $ITEM_DIR/front_app.sh
+
 ##### Right-side items #####
 
 source $ITEM_DIR/calendar.sh
