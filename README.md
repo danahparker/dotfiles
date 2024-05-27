@@ -8,7 +8,7 @@ All of my dotfile configurations for programming and whatnot
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew tap homebrew/cask-fonts
 brew tap FelixKratz/formulae
-brew install git neovim stow tmux powerlevel10k zsh-autosuggestions zsh-syntax-highlighting fzf eza zoxide font-meslo-lg-nerd-font sketchybar font-hack-nerd-font jq font-sf-pro neofetch cmatrix btop
+brew install git neovim stow tmux powerlevel10k zsh-autosuggestions zsh-syntax-highlighting fzf eza zoxide font-meslo-lg-nerd-font sketchybar font-hack-nerd-font jq font-sf-pro neofetch cmatrix btop koekeishiya/formulae/yabai koekeishiya/formulae/skhd
 brew install --cask wezterm
 brew install --cask sf-symbols
 git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
