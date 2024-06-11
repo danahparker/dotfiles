@@ -386,7 +386,7 @@ function icon_map() {
   "Atom")
     icon_result=":atom:"
     ;;
-  "FaceTime" | "FaceTime 通话")
+  "FaceTime" | "FaceTime 通话" | "Amazon Chime")
     icon_result=":face_time:"
     ;;
   "Yuque" | "语雀")
