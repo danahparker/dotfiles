@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 source "$HOME/amazon.sh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -48,6 +50,12 @@ alias gui="gitui"
 # eza aliases
 alias l='eza --long --all --icons=always'
 alias ls='eza --all --icons=always'
+
+# chrome alias for cors
+# use "chrome-dws"
+alias chrome='open -n -a /Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+alias chrome-tmp='chrome --args --user-data-dir="/tmp/chrome_dev_test"'
+alias chrome-dws='chrome-tmp --disable-web-security'
 
 # random aliases
 alias ..='cd ..'
@@ -110,3 +118,6 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
