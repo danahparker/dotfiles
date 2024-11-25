@@ -20,6 +20,9 @@ export REPOS="$HOME/repos"
 export VIMRC="$NVIM/init.lua"
 export ZSHRC="$HOME/.zshrc"
 
+export WORKPLACE="$HOME/workplace"
+export UI="$WORKPLACE/react/src/AWSSCMUIArgoTownsendApp/"
+
 # git aliases
 export MAIN_BRANCH_NAME='mainline'
 alias g='git'
