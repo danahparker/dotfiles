@@ -1,6 +1,5 @@
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-source "$HOME/amazon.sh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -10,6 +9,7 @@ fi
 
 export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 export DF="$HOME/dotfiles/"
 export EDITOR='/usr/local/bin/nvim'
@@ -22,6 +22,7 @@ export ZSHRC="$HOME/.zshrc"
 
 export WORKPLACE="$HOME/workplace"
 export UI="$WORKPLACE/react/src/AWSSCMUIArgoTownsendApp/"
+export GQL="$WORKPLACE/gql/src/AWSSCMUIPortalGraphQLLambda/"
 
 # git aliases
 export MAIN_BRANCH_NAME='mainline'
@@ -88,10 +89,6 @@ eval "$(tmuxifier init -)"
 alias tes="tmuxifier edit-session"
 alias tks="tmux kill-session -t"
 alias tls="tmuxifier load-session"
-
-# https://github.com/romkatv/powerlevel10k
-ZSH_THEME="powerlevel10k/powerlevel10k"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
