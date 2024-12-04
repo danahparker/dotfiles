@@ -7,6 +7,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+source "$HOME/clouddesk.sh"
+source "$HOME/odin.sh"
+
 export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
@@ -16,12 +19,14 @@ export EDITOR='/usr/local/bin/nvim'
 export GOPATH="$HOME/go"
 export NVIM="$HOME/.config/nvim"
 export OBSIDIAN="$HOME/Documents/obsidian/"
+export ORG="$HOME/orgfiles/"
 export REPOS="$HOME/repos"
 export VIMRC="$NVIM/init.lua"
 export ZSHRC="$HOME/.zshrc"
 
 export WORKPLACE="$HOME/workplace"
-export UI="$WORKPLACE/react/src/AWSSCMUIArgoTownsendApp/"
+export UI="$WORKPLACE/ui/src/AWSSCMUIArgoTownsendApp/"
+export UI_INTEG="$WORKPLACE/ui/src/AWSSCMUIArgoTownsendIntegrationTests/"
 export GQL="$WORKPLACE/gql/src/AWSSCMUIPortalGraphQLLambda/"
 
 # git aliases
