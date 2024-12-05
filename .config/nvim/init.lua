@@ -197,7 +197,13 @@ require('lazy').setup({
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
-        local disable_filetypes = { c = true, cpp = true }
+        local disable_filetypes = {
+          c = true,
+          cpp = true,
+          lua = true,
+          ts = true,
+          js = true,
+        }
         local lsp_format_opt
         if disable_filetypes[vim.bo[bufnr].filetype] then
           lsp_format_opt = 'never'
@@ -209,9 +215,9 @@ require('lazy').setup({
           lsp_format = lsp_format_opt,
         }
       end,
-      formatters_by_ft = {
-        lua = { 'stylua' },
-      },
+      -- formatters_by_ft = {
+      --   lua = { 'stylua' },
+      -- },
     },
   },
   { -- Autocompletion
