@@ -83,6 +83,10 @@ return {
 
       lsp_zero.on_attach(function(client, bufnr)
         local opts = { buffer = bufnr, remap = false }
+        -- turn off autoformat
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+        -- git keymaps
         vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
         vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set('n', '<leader>vws', function() vim.lsp.buf.workspace_symbol() end, opts)
