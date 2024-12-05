@@ -29,6 +29,16 @@ export UI="$WORKPLACE/ui/src/AWSSCMUIArgoTownsendApp/"
 export UI_INTEG="$WORKPLACE/ui/src/AWSSCMUIArgoTownsendIntegrationTests/"
 export GQL="$WORKPLACE/gql/src/AWSSCMUIPortalGraphQLLambda/"
 
+# brazil aliases
+alias bb="brazil-build"
+alias bbaw="brazil-build alpha-watch"
+alias bbco="brazil-build cypress:open"
+alias bbi="brazil-build install"
+alias bbs="brazil-build start"
+alias bbsa="brazil-build start:alpha"
+alias bwc="brazil ws create --name"
+alias bwu="brazil ws use --package"
+
 # git aliases
 export MAIN_BRANCH_NAME='mainline'
 alias g='git'
