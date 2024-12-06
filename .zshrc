@@ -30,6 +30,7 @@ export UI_INTEG="$WORKPLACE/ui/src/AWSSCMUIArgoTownsendIntegrationTests/"
 export GQL="$WORKPLACE/gql/src/AWSSCMUIPortalGraphQLLambda/"
 
 # brazil aliases
+alias b="brazil-build"
 alias bb="brazil-build"
 alias bbaw="brazil-build alpha-watch"
 alias bbco="brazil-build cypress:open"
