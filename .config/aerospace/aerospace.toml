@@ -198,3 +198,7 @@ run = "move-node-to-workspace S"
 [[on-window-detected]]
 if.app-id = 'com.cisco.anyconnect.gui'
 run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = 'com.electron.cypress'
+run = "layout floating"
