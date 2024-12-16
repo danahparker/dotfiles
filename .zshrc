@@ -147,3 +147,5 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(mise activate zsh)"
 source /Users/danapar/.brazil_completion/zsh_completion
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-23.jdk/Contents/Home"
+
+bindkey '\e[3;5~' backward-kill-word

@@ -1,12 +1,5 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
-
--- This will hold the configuration.
 local config = wezterm.config_builder()
-
--- This is where you actually apply your config choices
-
--- For example, changing the color scheme:
 
 config.color_scheme = 'Muse (terminal.sexy)' -- for dark
 --config.color_scheme = 'Harmonic16 Light (base16)' -- for light
@@ -20,5 +13,22 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 1
 config.macos_window_background_blur = 1
 
--- and finally, return the configuration to wezterm
+config.keys = {
+    {
+        key = 'LeftArrow',
+        mods = 'OPT',
+        action = wezterm.action.SendString('\x1bb'),
+    },
+    {
+        key = 'RightArrow',
+        mods = 'OPT',
+        action = wezterm.action.SendString('\x1bf'),
+    },
+    {
+        key = 'Backspace',
+        mods = 'OPT',
+        action = wezterm.action.SendString('\x1b[3;5~'),
+    },
+}
+
 return config
