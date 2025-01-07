@@ -208,3 +208,7 @@ run = "layout floating"
 [[on-window-detected]]
 if.app-id = 'com.electron.cypress'
 run = ["layout floating", "move-node-to-workspace C"]
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = "move-node-to-workspace O"
