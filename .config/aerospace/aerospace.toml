@@ -212,3 +212,7 @@ run = ["layout floating", "move-node-to-workspace C"]
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = "move-node-to-workspace O"
+
+[[on-window-detected]]
+if.app-id = 'com.tidal.desktop'
+run = "move-node-to-workspace 9"
