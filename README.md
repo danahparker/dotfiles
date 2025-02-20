@@ -10,6 +10,7 @@ brew tap FelixKratz/formulae
 brew install git gh neovim stow tmux powerlevel10k zsh-autosuggestions zsh-syntax-highlighting fzf eza zoxide font-meslo-lg-nerd-font font-hack-nerd-font jq font-sf-pro neofetch cmatrix btop ripgrep
 brew install --cask wezterm
 brew install --cask sf-symbols
+curl -LsSf https://astral.sh/uv/install.sh | sh
 git clone https://github.com/jimeh/tmuxifier.git $HOME/.tmuxifier
 ```
 
