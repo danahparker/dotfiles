@@ -20,7 +20,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
 export DF="$HOME/dotfiles/"
-export EDITOR='/usr/local/bin/nvim'
+export EDITOR="/opt/homebrew/bin/nvim"
 export GOPATH="$HOME/go"
 export NVIM="$HOME/.config/nvim"
 export OBSIDIAN="$HOME/Documents/obsidian/"
@@ -30,6 +30,7 @@ export VIMRC="$NVIM/init.lua"
 export ZSHRC="$HOME/.zshrc"
 
 export WORKPLACE="$HOME/workplace"
+export CDS="$WORKPLACE/cds/src/AWSSCMChangeDefinitionService/"
 export UI="$WORKPLACE/ui/src/AWSSCMUIArgoTownsendApp/"
 export UI_INTEG="$WORKPLACE/ui/src/AWSSCMUIArgoTownsendIntegrationTests/"
 export GQL="$WORKPLACE/gql/src/AWSSCMUIPortalGraphQLLambda/"
