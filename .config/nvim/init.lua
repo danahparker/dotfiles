@@ -51,6 +51,11 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', {})
 vim.keymap.set('n', ']q', ':cn<CR>', {})
 vim.keymap.set('n', '[q', ':cp<CR>', {})
 
+-- custom macros
+local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true) -- for mimicing Esc in macros
+vim.fn.setreg("j", "yoconsole.log(`" .. esc .."pa = ${JSON.stringify(" .. esc .."pa, null, 2)}`);" .. esc .."0w")
+vim.fn.setreg("l", "yoconsole.log(`" .. esc .."pa = ${" .. esc .."pa}`);" .. esc .."0w")
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
