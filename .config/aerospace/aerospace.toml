@@ -211,6 +211,10 @@ if.app-id = 'org.mozilla.thunderbird'
 run = "move-node-to-workspace M"
 
 [[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = "move-node-to-workspace M"
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = "move-node-to-workspace O"
 
