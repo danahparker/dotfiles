@@ -53,15 +53,25 @@ vim.keymap.set('n', '[q', ':cp<CR>', {})
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
--- custom macros
 local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true) -- for mimicing Esc in macros
 vim.api.nvim_create_augroup("JSLogMacro", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
+  desc = "Custom logging macros for javascript/typescript",
   group = "JSLogMacro",
   pattern = { "javascript", "typescript" },
   callback = function()
     vim.fn.setreg("j", "yoconsole.log(`" .. esc .."pa = ${JSON.stringify(" .. esc .."pa, null, 2)}`);" .. esc .."0w")
     vim.fn.setreg("l", "yoconsole.log(`" .. esc .."pa = ${String(" .. esc .."pa)}`);" .. esc .."0w")
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.expandtab = true
   end,
 })
 
