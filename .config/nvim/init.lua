@@ -50,6 +50,8 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', {})
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', {})
 vim.keymap.set('n', ']q', ':cn<CR>', {})
 vim.keymap.set('n', '[q', ':cp<CR>', {})
+vim.keymap.set('v', '<', '<gv')
+vim.keymap.set('v', '>', '>gv')
 
 -- custom macros
 local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true) -- for mimicing Esc in macros
