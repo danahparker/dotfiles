@@ -19,21 +19,21 @@ export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
-export DF="$HOME/dotfiles/"
+export DESKTOP="$HOME/Desktop"
+export DOCUMENTS="$HOME/Documents"
 export EDITOR="/opt/homebrew/bin/nvim"
 export GOPATH="$HOME/go"
-export NVIM="$HOME/.config/nvim"
-export OBSIDIAN="$HOME/Documents/obsidian/"
 export ORG="$HOME/orgfiles/"
 export REPOS="$HOME/repos"
 export VIMRC="$NVIM/init.lua"
 export ZSHRC="$HOME/.zshrc"
 
-export WORKPLACE="$HOME/workplace"
-export CDS="$WORKPLACE/cds/src/AWSSCMChangeDefinitionService/"
-export UI="$WORKPLACE/ui/src/AWSSCMUIArgoTownsendApp/"
-export UI_INTEG="$WORKPLACE/ui/src/AWSSCMUIArgoTownsendIntegrationTests/"
-export GQL="$WORKPLACE/gql/src/AWSSCMUIPortalGraphQLLambda/"
+export DOTFILES="$HOME/dotfiles"
+export NVIM="$DOTFILES/.config/nvim"
+
+export OBSIDIAN="$HOME/Documents/obsidian/"
+export AMAZON="$OBSIDIAN/Amazon"
+export PERSONAL="$OBSIDIAN/Personal"
 
 # brazil aliases
 alias b="brazil-build"
@@ -152,3 +152,5 @@ source /Users/danapar/.brazil_completion/zsh_completion
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-23.jdk/Contents/Home"
 
 bindkey '\e[3;5~' backward-kill-word
+
+source $HOME/.amazon_env_vars.sh
