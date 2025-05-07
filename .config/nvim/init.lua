@@ -55,8 +55,15 @@ vim.keymap.set('v', '>', '>gv')
 
 -- custom macros
 local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true) -- for mimicing Esc in macros
-vim.fn.setreg("j", "yoconsole.log(`" .. esc .."pa = ${JSON.stringify(" .. esc .."pa, null, 2)}`);" .. esc .."0w")
-vim.fn.setreg("l", "yoconsole.log(`" .. esc .."pa = ${" .. esc .."pa}`);" .. esc .."0w")
+vim.api.nvim_create_augroup("JSLogMacro", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  group = "JSLogMacro",
+  pattern = { "javascript", "typescript" },
+  callback = function()
+    vim.fn.setreg("j", "yoconsole.log(`" .. esc .."pa = ${JSON.stringify(" .. esc .."pa, null, 2)}`);" .. esc .."0w")
+    vim.fn.setreg("l", "yoconsole.log(`" .. esc .."pa = ${String(" .. esc .."pa)}`);" .. esc .."0w")
+  end,
+})
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
