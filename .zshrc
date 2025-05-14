@@ -95,6 +95,7 @@ alias init='kinit && mwinit -f -s -o'
 alias nds='ninja-dev-sync'
 alias pomo='porsmo'
 alias sz='source ~/.zshrc'
+alias tas='tmux attach-session -t'
 alias v='nvim'
 
 # bun completions
