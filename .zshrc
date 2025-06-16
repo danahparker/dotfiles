@@ -16,11 +16,13 @@ source "$HOME/clouddesk.sh"
 source "$HOME/odin.sh"
 
 export PATH=$PATH:$GOPATH/bin
+export PATH="$HOME/scripts:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
 export DESKTOP="$HOME/Desktop"
 export DOCUMENTS="$HOME/Documents"
+export DOWNLOADS="$HOME/Downloads"
 export EDITOR="/opt/homebrew/bin/nvim"
 export GOPATH="$HOME/go"
 export ORG="$HOME/orgfiles/"
@@ -46,6 +48,7 @@ alias bbi="brazil-build install"
 alias bblt="brazil-build local-test"
 alias bbs="brazil-build start"
 alias bbsa="brazil-build start:alpha"
+alias bbsaff="brazil-build start:alpha-feature-flags"
 alias bwc="brazil ws create --name"
 alias bwu="brazil ws use --package"
 
