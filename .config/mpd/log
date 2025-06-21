@@ -1,0 +1,228 @@
+2025-06-20T12:07:56 exception: Failed to access /home/doonsh/music: No such file or directory
+2025-06-20T12:07:56 exception: Failed to open "/home/doonsh/.local/state/mpd/state": No such file or directory
+2025-06-20T12:08:00 exception: Failed to access /home/doonsh/music: No such file or directory
+2025-06-20T12:08:00 mixer: Failed to read mixer for "default detected output": no such mixer control: PCM
+2025-06-20T15:00:06 update: added /Kettenkarussel - Konstant Sleep.mp3
+2025-06-20T15:00:06 update: added /Beethoven TBS - Plomo para Todos (Extended Mix).mp3
+2025-06-20T15:00:59 player: played "Kettenkarussel - Konstant Sleep.mp3"
+2025-06-20T15:01:37 player: played "Kettenkarussel - Konstant Sleep.mp3"
+2025-06-20T15:02:38 player: played "Beethoven TBS - Plomo para Todos (Extended Mix).mp3"
+2025-06-20T15:04:47 player: played "Kettenkarussel - Konstant Sleep.mp3"
+2025-06-20T15:11:49 update: added /Rnbstylerz - Like Wooh Wooh.flac
+2025-06-20T15:12:21 player: played "Rnbstylerz - Like Wooh Wooh.flac"
+2025-06-20T15:19:39 update: added /Technasia - I Am Somebody.mp3
+2025-06-20T15:19:39 update: added /Hush Hush - Hold Me (Hh124).mp3
+2025-06-20T15:19:39 update: removing Rnbstylerz - Like Wooh Wooh.flac
+2025-06-20T15:23:32 player: played "Hush Hush - Hold Me (Hh124).mp3"
+2025-06-20T15:28:24 player: played "Hush Hush - Hold Me (Hh124).mp3"
+2025-06-20T15:35:44 player: played "Beethoven TBS - Plomo para Todos (Extended Mix).mp3"
+2025-06-20T15:44:16 update: added /1905 - BEATS 2 BOMB 2 - 01 GIMME'.flac
+2025-06-20T15:44:16 update: added /1905 - BEATS 2 BOMB 2 - 02 SOFT THANG.flac
+2025-06-20T15:44:16 update: added /01. DJ Deeon - Headhunters.flac
+2025-06-20T15:44:16 update: added /05. DJ Deeon - Shake That Butt.flac
+2025-06-20T15:44:16 update: added /01 Rollin' Through Time.mp3
+2025-06-20T15:44:16 update: added /03 Drum 2 Drum.mp3
+2025-06-20T15:44:16 update: added /DJ Godfather - Aliens Got My 808.mp3
+2025-06-20T15:44:16 update: added /02. DJ Deeon - Headhunters (Juke Mix).flac
+2025-06-20T15:44:16 update: added /13 Get Down Low.mp3
+2025-06-20T15:44:16 update: added /[B2] DJ Assault - Sex on the Beach.flac
+2025-06-20T15:44:16 update: added /[A1] DJ Assault - Funky Bitch.flac
+2025-06-20T15:44:16 update: added /Dj Godfather - Throw That Thang.mp3
+2025-06-20T15:44:16 update: added /02 Bounce That Ass.mp3
+2025-06-20T15:44:16 update: added /Dj Godfather - Every Day.mp3
+2025-06-20T15:44:16 update: added /03. DJ Deeon - Tear The Klub Up.flac
+2025-06-20T15:44:16 update: added /04. DJ Deeon - Shake That Ass.flac
+2025-06-20T15:44:16 update: added /04 Freak This Hall.mp3
+2025-06-20T15:44:16 update: added /The Aztec Mystic - 02 Ascesión.mp3
+2025-06-20T15:44:16 update: added /The Aztec Mystic - 01 Jaguar.mp3
+2025-06-20T15:44:16 update: added /02 Bounce Dat Booty.mp3
+2025-06-20T15:44:16 update: added /01 114799.mp3
+2025-06-20T15:44:16 update: added /[B1] DJ Assault - Din Daa Daa (Remix).flac
+2025-06-20T15:44:16 update: added /03 Tip That Bitch!.mp3
+2025-06-20T15:44:16 update: added /[A2] DJ Assault - Funky Bitch (Instrumental).flac
+2025-06-20T15:44:16 update: added /04 Pop Up.mp3
+2025-06-20T15:44:31 player: played "Kettenkarussel - Konstant Sleep.mp3"
+2025-06-20T15:45:22 player: played "1905 - BEATS 2 BOMB 2 - 01 GIMME'.flac"
+2025-06-20T15:45:36 pipewire_output: Decoder is too slow; playing silence to avoid xrun
+2025-06-20T15:46:13 player: played "1905 - BEATS 2 BOMB 2 - 01 GIMME'.flac"
+[src/libmpg123/lfs_wrap.c:INT123_wrap_open():851] error: Cannot open file /home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3: No such file or directory
+2025-06-20T15:47:45 mpg123: libmpg123 failed to open /home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3: A generic mpg123 error.
+2025-06-20T15:47:45 exception: Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+[src/libmpg123/lfs_wrap.c:INT123_wrap_open():851] error: Cannot open file /home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3: No such file or directory
+2025-06-20T15:47:45 mpg123: libmpg123 failed to open /home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3: A generic mpg123 error.
+2025-06-20T15:47:45 exception: Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:04 exception: Failed to decode "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3"; Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:04 player: played "DJ Godfather - Aliens Got My 808.mp3"
+2025-06-20T15:48:04 exception: Failed to decode "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3"; Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:05 exception: Failed to decode "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3"; Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:05 player: played "DJ Godfather - Aliens Got My 808.mp3"
+2025-06-20T15:48:05 exception: Failed to decode "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3"; Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:05 exception: Failed to decode "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3"; Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:05 player: played "DJ Godfather - Aliens Got My 808.mp3"
+2025-06-20T15:48:05 exception: Failed to decode "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3"; Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:06 exception: Failed to decode "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3"; Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:06 player: played "DJ Godfather - Aliens Got My 808.mp3"
+2025-06-20T15:48:06 exception: Failed to decode "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3"; Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:06 exception: Failed to decode "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3"; Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:06 player: played "DJ Godfather - Aliens Got My 808.mp3"
+2025-06-20T15:48:06 exception: Failed to decode "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3"; Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:08 exception: Failed to decode "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3"; Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:08 player: played "DJ Godfather - Aliens Got My 808.mp3"
+2025-06-20T15:48:08 exception: Failed to decode "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3"; Failed to open "/home/doonsh/music/DJ Godfather - Aliens Got My 808.mp3": No such file or directory
+2025-06-20T15:48:18 update: added /1905 - BEATS 2 BOMB 2 - 03 FUCK THE FEELINGS.flac
+2025-06-20T15:48:18 update: added /1905 - BEATS 2 BOMB 2 - 05 PITBULLMOUTH.flac
+2025-06-20T15:48:18 update: removing DJ Godfather - Aliens Got My 808.mp3
+2025-06-20T15:48:39 update: removing Technasia - I Am Somebody.mp3
+2025-06-20T15:48:40 exception: No such song
+2025-06-20T15:48:40 exception: No such song
+2025-06-20T15:56:45 player: played "1905 - BEATS 2 BOMB 2 - 01 GIMME'.flac"
+2025-06-20T15:57:13 update: added /1905 - BEATS 2 BOMB 2 - 07 COPYRIGHT ENTERTAINMENT.flac
+2025-06-20T15:57:13 update: added /1905 - BEATS 2 BOMB 2 - 06 ZIP ZIP ZIP.flac
+2025-06-20T15:57:18 player: played "1905 - BEATS 2 BOMB 2 - 02 SOFT THANG.flac"
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 1489800.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 1489800.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 1489800.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 1489800.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 1489800.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 1489800.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-06-20T15:57:52 player: played "13 Get Down Low.mp3"
+2025-06-20T16:00:37 player: played "1905 - BEATS 2 BOMB 2 - 02 SOFT THANG.flac"
+2025-06-20T16:03:56 player: played "1905 - BEATS 2 BOMB 2 - 01 GIMME'.flac"
+2025-06-20T16:05:30 player: played "01 114799.mp3"
+2025-06-20T16:08:04 player: played "01 114799.mp3"
+2025-06-20T16:08:33 update: removing 01 114799.mp3
+2025-06-20T16:08:35 exception: No such song
+2025-06-20T16:08:35 exception: No such song
+2025-06-20T16:09:40 exception: No such directory
+2025-06-20T16:13:08 update: removing 1905 - BEATS 2 BOMB 2 - 03 FUCK THE FEELINGS.flac
+2025-06-20T16:13:09 exception: No such song
+2025-06-20T16:13:09 exception: No such song
+2025-06-20T16:13:52 player: played "1905 - BEATS 2 BOMB 2 - 05 PITBULLMOUTH.flac"
+2025-06-20T16:14:06 pipewire_output: Decoder is too slow; playing silence to avoid xrun
+2025-06-20T16:16:31 update: removing 1905 - BEATS 2 BOMB 2 - 06 ZIP ZIP ZIP.flac
+2025-06-20T16:16:36 exception: No such song
+2025-06-20T16:16:36 exception: No such song
+2025-06-20T16:16:59 exception: Failed to open "/home/doonsh/music/1905 - BEATS 2 BOMB 2 - 07 COPYRIGHT ENTERTAINMENT.flac": No such file or directory
+2025-06-20T16:16:59 exception: Failed to open "/home/doonsh/music/1905 - BEATS 2 BOMB 2 - 07 COPYRIGHT ENTERTAINMENT.flac": No such file or directory
+2025-06-20T16:17:02 update: removing 1905 - BEATS 2 BOMB 2 - 07 COPYRIGHT ENTERTAINMENT.flac
+2025-06-20T16:17:02 update: removing 1905 - BEATS 2 BOMB 2 - 05 PITBULLMOUTH.flac
+2025-06-20T16:17:02 update: removing 1905 - BEATS 2 BOMB 2 - 02 SOFT THANG.flac
+2025-06-20T16:17:02 update: removing 1905 - BEATS 2 BOMB 2 - 01 GIMME'.flac
+2025-06-20T16:17:03 exception: No such song
+2025-06-20T16:17:03 exception: No such song
+2025-06-20T16:17:05 player: played "1905 - BEATS 2 BOMB 2 - 07 COPYRIGHT ENTERTAINMENT.flac"
+2025-06-20T16:20:00 player: played "04 Pop Up.mp3"
+2025-06-20T16:20:54 update: removing 04 Pop Up.mp3
+2025-06-20T16:20:54 update: removing 03 Drum 2 Drum.mp3
+2025-06-20T16:20:54 update: removing 02 Bounce That Ass.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 1489800.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+2025-06-20T16:21:22 update: removing 13 Get Down Low.mp3
+2025-06-20T16:21:23 exception: No such song
+2025-06-20T16:21:23 exception: No such song
+2025-06-20T16:21:29 exception: No such song
+2025-06-20T16:21:29 exception: No such song
+2025-06-20T16:24:28 player: played "[A1] DJ Assault - Funky Bitch.flac"
+2025-06-20T16:26:05 exception: Failed to open "/home/doonsh/music/[A1] DJ Assault - Funky Bitch.flac": No such file or directory
+2025-06-20T16:26:05 exception: Failed to open "/home/doonsh/music/[A1] DJ Assault - Funky Bitch.flac": No such file or directory
+2025-06-20T16:26:06 exception: Failed to decode "/home/doonsh/music/[A2] DJ Assault - Funky Bitch (Instrumental).flac"; Failed to open "/home/doonsh/music/[A2] DJ Assault - Funky Bitch (Instrumental).flac": No such file or directory
+2025-06-20T16:26:06 player: played "[A2] DJ Assault - Funky Bitch (Instrumental).flac"
+2025-06-20T16:26:22 exception: Failed to open "/home/doonsh/music/[B1] DJ Assault - Din Daa Daa (Remix).flac": No such file or directory
+2025-06-20T16:26:22 exception: Failed to open "/home/doonsh/music/[B1] DJ Assault - Din Daa Daa (Remix).flac": No such file or directory
+2025-06-20T16:26:38 update: added /07 EMPTY BUS STOP.flac
+2025-06-20T16:26:38 update: added /10 GIRL U SO FINE.flac
+2025-06-20T16:26:38 update: added /09 QUEENBOOTYATHENAAPHRODITE.flac
+2025-06-20T16:26:38 update: added /03 - Tokischa - Daddy (Vandalized edit) (feat. Sexyy Red).flac
+2025-06-20T16:26:38 update: added /06 SPANK!.flac
+2025-06-20T16:26:38 update: added /01 - iamnothappy - wild at heart (Wamdue Kids - In My Soul remix).flac
+2025-06-20T16:26:38 update: added /05 DROP THE LOC.flac
+2025-06-20T16:26:38 update: added /14 AUDISHAWTY.flac
+2025-06-20T16:26:38 update: added /13 FREAK IN FULL EFFECK.flac
+2025-06-20T16:26:38 update: added /08 ADULTSWIM DOCTOR ETRANGE.flac
+2025-06-20T16:26:38 update: added /02 NORF COLD 304'S.flac
+2025-06-20T16:26:38 update: added /03 TAKE YO PANTIES OFF.flac
+2025-06-20T16:26:38 update: added /12 EAGER SAUCY BLACK MAN AT ZORBA’S MEETS BUSTY UNINTERESTED LADY VIA PHONE CALL.flac
+2025-06-20T16:26:38 update: added /04 - Regis - Montagem Game 196 Bootleg.flac
+2025-06-20T16:26:38 update: added /11 SHADOWREALM.flac
+2025-06-20T16:26:38 update: added /02 - Playboi Carti - @ MEH (Huna edit).flac
+2025-06-20T16:26:38 update: added /01 INTRO.flac
+2025-06-20T16:26:38 update: added /04 NEW JAZZ SCHMELL.flac
+2025-06-20T16:26:38 update: removing [A1] DJ Assault - Funky Bitch.flac
+2025-06-20T16:26:38 update: removing [A2] DJ Assault - Funky Bitch (Instrumental).flac
+2025-06-20T16:26:38 update: removing [B2] DJ Assault - Sex on the Beach.flac
+2025-06-20T16:26:38 update: removing [B1] DJ Assault - Din Daa Daa (Remix).flac
+2025-06-20T16:26:39 exception: No such song
+2025-06-20T16:26:39 exception: No such song
+2025-06-20T16:26:51 exception: No such song
+2025-06-20T16:26:51 exception: No such song
+2025-06-20T16:28:57 update: added /14 - Sexyy Red - Hellcats SRTs (Tama Gucci edit).flac
+2025-06-20T16:28:57 update: added /10 - Comethazine - Bands (Amadeezy Darkwave edit).flac
+2025-06-20T16:28:57 update: added /13 - Blackmoonchild - Givethelove2.flac
+2025-06-20T16:28:57 update: added /16 - James Blake - assume form_swz essence edit (Gum's Break rework).flac
+2025-06-20T16:28:57 update: added /07 - Ginuwine - None of Ur Friends (Stonie Blue edit).flac
+2025-06-20T16:28:57 update: added /05 - Bladee, Thaiboy Digital & Ecco2K - Victim (Nick León dembow edit).flac
+2025-06-20T16:28:57 update: added /09 - HiTech & TrillBilly - TinMan (Doughboyz Cashout mix).flac
+2025-06-20T16:28:57 update: added /08 - PinkPantheress - Internet baby (interlude) (JEWELSSEA remix).flac
+2025-06-20T16:28:57 update: added /15 - Leevisa - THE CYBER GIRL TALK (Wristboi x TLC blend).flac
+2025-06-20T16:28:57 update: added /11 - OJ da Juiceman - No Hook (SUPR SPRT Jersey remix).flac
+2025-06-20T16:28:57 update: added /06 - Dastardly Kids - Bu$$ the Bank (Ka!ros flip).flac
+2025-06-20T16:28:57 update: added /12 - Skepta - Bullet From a Gun (zzzplz edit).flac
+2025-06-20T16:28:57 update: removing 01. DJ Deeon - Headhunters.flac
+2025-06-20T16:28:57 update: removing 05. DJ Deeon - Shake That Butt.flac
+2025-06-20T16:28:57 update: removing 04. DJ Deeon - Shake That Ass.flac
+2025-06-20T16:28:57 update: removing 03. DJ Deeon - Tear The Klub Up.flac
+2025-06-20T16:28:57 update: removing 02. DJ Deeon - Headhunters (Juke Mix).flac
+2025-06-20T16:28:58 exception: No such song
+2025-06-20T16:28:58 exception: No such song
+[src/libmpg123/lfs_wrap.c:INT123_wrap_open():851] error: Cannot open file /home/doonsh/music/The Aztec Mystic - 02 Ascesión.mp3: No such file or directory
+2025-06-20T16:29:30 mpg123: libmpg123 failed to open /home/doonsh/music/The Aztec Mystic - 02 Ascesión.mp3: A generic mpg123 error.
+2025-06-20T16:29:30 exception: Failed to open "/home/doonsh/music/The Aztec Mystic - 02 Ascesión.mp3": No such file or directory
+[src/libmpg123/lfs_wrap.c:INT123_wrap_open():851] error: Cannot open file /home/doonsh/music/The Aztec Mystic - 02 Ascesión.mp3: No such file or directory
+2025-06-20T16:29:30 mpg123: libmpg123 failed to open /home/doonsh/music/The Aztec Mystic - 02 Ascesión.mp3: A generic mpg123 error.
+2025-06-20T16:29:30 exception: Failed to open "/home/doonsh/music/The Aztec Mystic - 02 Ascesión.mp3": No such file or directory
+2025-06-20T16:29:34 update: removing The Aztec Mystic - 02 Ascesión.mp3
+2025-06-20T16:29:34 update: removing The Aztec Mystic - 01 Jaguar.mp3
+2025-06-20T16:29:35 exception: No such song
+2025-06-20T16:29:35 exception: No such song
+2025-06-20T16:30:05 exception: No such song
+2025-06-20T16:30:05 exception: No such song
+2025-06-20T16:30:21 exception: No such song
+2025-06-20T16:30:21 exception: No such song
+2025-06-20T16:30:23 player: played "The Aztec Mystic - 02 Ascesión.mp3"
+2025-06-20T16:32:15 update: removing 04 Freak This Hall.mp3
+2025-06-20T16:32:15 update: removing 03 Tip That Bitch!.mp3
+2025-06-20T16:32:15 update: removing 02 Bounce Dat Booty.mp3
+2025-06-20T16:32:15 update: removing 01 Rollin' Through Time.mp3
+2025-06-20T16:32:16 exception: No such song
+2025-06-20T16:32:16 exception: No such song
+2025-06-20T16:32:17 player: played "04 Freak This Hall.mp3"
+2025-06-20T16:32:28 player: played "Dj Godfather - Every Day.mp3"
+2025-06-20T16:33:08 update: removing Dj Godfather - Throw That Thang.mp3
+2025-06-20T16:33:08 update: removing Dj Godfather - Every Day.mp3
+2025-06-20T16:33:30 exception: No such song
+2025-06-20T16:33:30 exception: No such song
+2025-06-20T16:33:41 exception: No such song
+2025-06-20T16:33:41 exception: No such song
+2025-06-20T16:33:44 exception: No such song
+2025-06-20T16:33:44 exception: No such song
+2025-06-20T16:33:47 exception: No such song
+2025-06-20T16:33:47 exception: No such song
+2025-06-20T16:34:26 pipewire_output: Decoder is too slow; playing silence to avoid xrun
+2025-06-20T16:34:43 exception: Failed to open "/home/doonsh/music/01 - iamnothappy - wild at heart (Wamdue Kids - In My Soul remix).flac": No such file or directory
+2025-06-20T16:34:43 exception: Failed to open "/home/doonsh/music/01 - iamnothappy - wild at heart (Wamdue Kids - In My Soul remix).flac": No such file or directory
+2025-06-20T16:40:13 exception: Failed to open "/home/doonsh/music/02 - Playboi Carti - @ MEH (Huna edit).flac": No such file or directory
+2025-06-20T16:40:13 exception: Failed to open "/home/doonsh/music/02 - Playboi Carti - @ MEH (Huna edit).flac": No such file or directory
+2025-06-20T16:40:19 player: played "03 - Tokischa - Daddy (Vandalized edit) (feat. Sexyy Red).flac"

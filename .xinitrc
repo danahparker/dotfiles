@@ -1,9 +1,5 @@
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 exec zsh &
-/usr/bin/pipewire &
-/usr/bin/pipewire-pulse &
-/usr/bin/pipewire-media-session &
 exec dunst &
 exec picom &
 exec dwm
-systemctl --user start pipewire
-systemctl --user start wireplumber
