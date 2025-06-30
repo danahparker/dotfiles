@@ -41,7 +41,7 @@ export ZSHRC="$HOME/.zshrc"
 export DOTFILES="$HOME/dotfiles"
 export NVIM="$DOTFILES/.config/nvim"
 
-export OBSIDIAN="$HOME/Documents/obsidian/"
+export OBSIDIAN="$HOME/obsidian/"
 export AMAZON="$OBSIDIAN/Amazon"
 export PERSONAL="$OBSIDIAN/Personal"
 
@@ -108,7 +108,6 @@ alias cors='open -n -a "Google Chrome" --args --user-data-dir=/tmp/temp_chrome_u
 alias init='kinit && mwinit -f -s -o'
 alias nds='ninja-dev-sync'
 alias pomo='porsmo'
-alias sz='source ~/.zshrc'
 alias tas='tmux attach-session -t'
 alias v='nvim'
 
@@ -179,7 +178,7 @@ bindkey '\e[3;5~' backward-kill-word
 
 [ -s "$HOME/clouddesk.sh" ] && source "$HOME/clouddesk.sh"
 [ -s "$HOME/odin.sh" ] && source "$HOME/odin.sh"
-[ -s "$HOME/.amazon_env_vars" ] && source $HOME/.amazon_env_vars.sh
+[ -s "$HOME/.amazon_env_vars.sh" ] && source "$HOME/.amazon_env_vars.sh"
 
 # -------------------- pnpm --------------------
 
