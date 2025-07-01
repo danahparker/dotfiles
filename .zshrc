@@ -41,7 +41,7 @@ export ZSHRC="$HOME/.zshrc"
 export DOTFILES="$HOME/dotfiles"
 export NVIM="$DOTFILES/.config/nvim"
 
-export OBSIDIAN="$HOME/obsidian/"
+export OBSIDIAN="$HOME/obsidian"
 export AMAZON="$OBSIDIAN/Amazon"
 export PERSONAL="$OBSIDIAN/Personal"
 
