@@ -61,34 +61,6 @@ alias bbsaff="brazil-build start:alpha-feature-flags"
 alias bwc="brazil ws create --name"
 alias bwu="brazil ws use --package"
 
-# -------------------- git aliases --------------------
-
-export MAIN_BRANCH_NAME='mainline'
-alias g='git'
-alias ga="git add"
-alias gap="git add -p"
-alias gau="git add -u"
-alias gaup="git add -u -p"
-alias gb="git branch"
-alias gc="git commit"
-alias gco="git checkout"
-alias gcob="git checkout -b"
-alias gcom="git checkout $MAIN_BRANCH_NAME --"
-alias gd="git diff"
-alias gdc="git diff --cached"
-alias gdom="git diff origin/$MAIN_BRANCH_NAME"
-#alias gpuom="git push -u origin main"
-alias gl="git log"
-alias gp="git pull"
-alias grbm="git rebase $MAIN_BRANCH_NAME"
-alias gs="git status"
-alias gsh="git stash"
-alias gsha="git stash apply"
-alias gshs="git stash save"
-alias gshl="git stash list | cat"
-alias gsw="git switch"
-alias gui="gitui"
-
 # -------------------- eza aliases --------------------
 
 alias l='eza --long --all --icons=always'
