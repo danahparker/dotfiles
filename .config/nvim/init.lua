@@ -42,6 +42,8 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = false
 vim.opt.scrolloff = 10
 
+vim.wo.wrap = false
+
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, {})
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', {})
