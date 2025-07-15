@@ -24,6 +24,7 @@ export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$HOME/.emacs.d/bin"
 export PATH="$PATH:$HOME/.toolbox/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # -------------------- env vars --------------------
 
