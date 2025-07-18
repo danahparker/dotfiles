@@ -46,22 +46,6 @@ export OBSIDIAN="$HOME/obsidian"
 export AMAZON="$OBSIDIAN/Amazon"
 export PERSONAL="$OBSIDIAN/Personal"
 
-# ---------------- brazil aliases --------------------
-
-alias b="brazil-build"
-alias bb="brazil-build"
-alias bbaw="brazil-build alpha-watch"
-alias bbbw="brazil-build beta-watch"
-alias bbpw="brazil-build prod-watch"
-alias bbco="brazil-build cypress:open"
-alias bbi="brazil-build install"
-alias bblt="brazil-build local-test"
-alias bbs="brazil-build start"
-alias bbsa="brazil-build start:alpha"
-alias bbsaff="brazil-build start:alpha-feature-flags"
-alias bwc="brazil ws create --name"
-alias bwu="brazil ws use --package"
-
 # -------------------- eza aliases --------------------
 
 alias l='eza --long --all --icons=always'
