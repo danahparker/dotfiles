@@ -42,9 +42,9 @@ export ZSHRC="$HOME/.zshrc"
 export DOTFILES="$HOME/dotfiles"
 export NVIM="$DOTFILES/.config/nvim"
 
-export OBSIDIAN="$HOME/obsidian"
-export AMAZON="$OBSIDIAN/Amazon"
-export PERSONAL="$OBSIDIAN/Personal"
+export NOTES="$HOME/md"
+export AMAZON="$NOTES/Amazon"
+export PERSONAL="$NOTES/Personal"
 
 # -------------------- eza aliases --------------------
 
