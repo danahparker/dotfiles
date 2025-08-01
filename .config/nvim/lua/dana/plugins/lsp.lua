@@ -25,6 +25,7 @@ return {
       ensure_installed = {
         'ts_ls',
         'lua_ls',
+        'pylsp',
       }
     },
   },
@@ -69,6 +70,7 @@ return {
           { name = 'luasnip' },
           { name = 'buffer' },
           { name = 'path' },
+          { name = 'pylsp' },
         },
         mapping = cmp.mapping.preset.insert {
           ['<CR>'] = cmp.mapping.confirm { select = false },
@@ -110,12 +112,31 @@ return {
         vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
       end)
+      -- typescript lsp configuration
       lspconfig.ts_ls.setup({
         capabilities = require('cmp_nvim_lsp').default_capabilities(),
         on_attach = function(client, bufnr)
           lsp_zero.on_attach(client, bufnr)
         end,
-      })
+      },
+      -- python-lsp-server configuration
+      lspconfig.pylsp.setup({
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
+        on_attach = function (client, bufnr)
+          lsp_zero.on_attach(client, bufnr)
+        end,
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = {
+                ignore = {"W391"},
+                maxLineLength = 100,
+              },
+              pylint = { enabled = true }
+            }
+          }
+        }
+      }))
     end,
   },
 }
