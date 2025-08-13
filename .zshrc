@@ -1,19 +1,18 @@
-# -------------------- amazon q pre-block  --------------------
+# -------------------- amazon q pre-block // keep at the top --------------------
 
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
 # -------------------- powerlevel10k  --------------------
 
-# https://github.com/romkatv/powerlevel10k
 [ -s "$HOME/powerlevel10k/powerlevel10k.zsh-theme" ] && source ~/powerlevel10k/powerlevel10k.zsh-theme
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # -------------------- PATH exports --------------------
@@ -52,7 +51,7 @@ alias l='eza --long --all --icons=always'
 alias ls='eza --all --icons=always'
 
 #  -------------------- chrome alias for cors --------------------
-# use "chrome-dws"
+
 alias chrome='open -n -a /Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 alias chrome-tmp='chrome --args --user-data-dir="/tmp/chrome_dev_test"'
 alias chrome-dws='chrome-tmp --disable-web-security'
@@ -119,9 +118,6 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# -------------------- amazon q post-block  --------------------
-
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # Set up mise for runtime management
@@ -145,3 +141,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# -------------------- amazon q post-block // keep at the bottom  --------------------
+
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
