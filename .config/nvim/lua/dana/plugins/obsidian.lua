@@ -21,11 +21,11 @@ return {
     workspaces = {
       {
         name = 'personal',
-        path = '~/obsidian/Personal',
+        path = '~/md/Personal',
       },
       {
         name = 'amazon',
-        path = '~/obsidian/Amazon',
+        path = '~/md/Amazon',
       },
     },
   },
