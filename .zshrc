@@ -5,6 +5,7 @@
 # -------------------- powerlevel10k  --------------------
 
 [ -s "$HOME/powerlevel10k/powerlevel10k.zsh-theme" ] && source ~/powerlevel10k/powerlevel10k.zsh-theme
+[ -s "/usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme" ] && source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export ZSH_THEME="powerlevel10k/powerlevel10k"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -18,7 +19,7 @@ fi
 # -------------------- PATH exports --------------------
 
 export PATH="$PATH:$GOPATH/bin"
-export PATH="$PATH:$HOME/scripts"
+export PATH="$PATH:$HOME/.local/src/scripts"
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$HOME/.emacs.d/bin"
 export PATH="$PATH:$HOME/.toolbox/bin"
@@ -112,17 +113,17 @@ bindkey '^[[B' history-search-forward
 
 # -------------------- zsh auto suggestions --------------------
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -s "brew" ] && source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # -------------------- zsh syntax highlighting --------------------
 
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -s "brew" ] && source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+[ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 # Set up mise for runtime management
-eval "$(mise activate zsh)"
-source /Users/danapar/.brazil_completion/zsh_completion
+[ -s "mise" ] && eval "$(mise activate zsh)"
+[ -s "/Users/danapar/.brazil_completion/zsh_completion" ] && source /Users/danapar/.brazil_completion/zsh_completion
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-23.jdk/Contents/Home"
 
 bindkey '\e[3;5~' backward-kill-word
