@@ -58,14 +58,10 @@ alias chrome-tmp='chrome --args --user-data-dir="/tmp/chrome_dev_test"'
 alias chrome-dws='chrome-tmp --disable-web-security'
 
 #  -------------------- other aliases --------------------
+
 alias ..='cd ..'
 alias ...='cd ..; cd ..'
 alias ....='cd ..; cd ..; cd ..'
-alias cors='open -n -a "Google Chrome" --args --user-data-dir=/tmp/temp_chrome_user_data_dir http://localhost:3000/ --disable-web-security'
-alias init='kinit && mwinit -f -s -o'
-alias nds='ninja-dev-sync'
-alias pomo='porsmo'
-alias tas='tmux attach-session -t'
 alias v='nvim'
 
 # -------------------- bun --------------------
