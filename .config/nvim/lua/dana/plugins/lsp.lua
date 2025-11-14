@@ -94,7 +94,6 @@ return {
     'neovim/nvim-lspconfig',
     config = function()
       local lsp_zero = require('lsp-zero')
-      local lspconfig = require('lspconfig')
       lsp_zero.on_attach(function(client, bufnr)
         local opts = { buffer = bufnr, remap = false }
         -- turn off file formatting
@@ -113,14 +112,14 @@ return {
         vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
       end)
       -- typescript lsp configuration
-      lspconfig.ts_ls.setup({
+      vim.lsp.config['ts_ls'] = {
         capabilities = require('cmp_nvim_lsp').default_capabilities(),
         on_attach = function(client, bufnr)
           lsp_zero.on_attach(client, bufnr)
         end,
-      },
+      }
       -- python-lsp-server configuration
-      lspconfig.pylsp.setup({
+      vim.lsp.config['pylsp'] = {
         capabilities = require('cmp_nvim_lsp').default_capabilities(),
         on_attach = function (client, bufnr)
           lsp_zero.on_attach(client, bufnr)
@@ -140,7 +139,7 @@ return {
             }
           }
         }
-      }))
+      }
     end,
   },
 }
