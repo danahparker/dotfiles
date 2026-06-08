@@ -183,13 +183,31 @@ require('lazy').setup({
       require('telescope').setup {
         extensions = {
           ['ui-select'] = {
-            require('telescope.themes').get_dropdown(),
+            require('telescope.themes').get_dropdown({
+              layout_config = {
+                width = 0.9,
+                height = 0.9,
+              },
+            }),
           },
           fzf = {}
         },
         pickers = {
           find_files = {
-            theme = "ivy",
+            layout_strategy = "vertical",
+            layout_config = {
+              width = 0.9,
+              height = 0.9,
+              preview_height = 0.6,
+            },
+          },
+          live_grep = {
+            layout_strategy = "vertical",
+            layout_config = {
+              width = 0.9,
+              height = 0.9,
+              preview_height = 0.6,
+            },
           },
         },
       }
