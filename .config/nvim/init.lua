@@ -356,21 +356,54 @@ require('lazy').setup({
       end
     end,
   },
-  -- treesitter: Highlight, edit, and navigate code
+  -- treesitter: Highlight, edit, and navigate code (nvim-treesitter `main` branch)
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
+    lazy = false,
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-    opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-      indent = { enable = true, disable = { 'ruby' } },
-    },
+    config = function()
+      local ts = require 'nvim-treesitter'
+
+      -- Keep a core set of parsers installed/compiled up front. Parsers are
+      -- compiled (via the `tree-sitter` CLI) into stdpath('data')/site/parser.
+      -- markdown_inline/luadoc have no standalone filetype (they are injected).
+      ts.install {
+        'bash', 'c', 'diff', 'html', 'lua', 'luadoc',
+        'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc',
+      }
+
+      -- Start highlighting + experimental treesitter indent for a buffer.
+      local function enable(buf, lang)
+        if not vim.api.nvim_buf_is_valid(buf) then
+          return
+        end
+        pcall(vim.treesitter.start, buf, lang)
+        vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      end
+
+      -- Replicates the old `auto_install = true` + `highlight.enable`: for any
+      -- opened filetype with a parser in the registry, install it on demand
+      -- (if missing) then enable highlighting. Filetypes without a parser
+      -- (e.g. `org`, handled by orgmode) are left untouched.
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(args)
+          local buf = args.buf
+          local lang = vim.treesitter.language.get_lang(args.match) or args.match
+          if not vim.tbl_contains(ts.get_available(), lang) then
+            return
+          end
+          if vim.tbl_contains(ts.get_installed(), lang) then
+            enable(buf, lang)
+          else
+            ts.install(lang):await(vim.schedule_wrap(function()
+              enable(buf, lang)
+            end))
+          end
+        end,
+      })
+    end,
   },
   -- import plugins from dana/plugins directory
   { import = 'dana.plugins' },
