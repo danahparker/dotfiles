@@ -1,8 +1,8 @@
-vim.o.conceallevel = 1
+vim.o.conceallevel = 0
 return {
   'epwalsh/obsidian.nvim',
   version = '*',
-  lazy = true,
+  lazy = false,
   ft = "*",
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -28,5 +28,8 @@ return {
         path = '~/md/Amazon',
       },
     },
+    ui = {
+      enable = false,
+    }
   },
 }
