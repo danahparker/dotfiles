@@ -166,7 +166,10 @@ require('lazy').setup({
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
-    branch = '0.1.x',
+    -- master (not the 0.1.x tag line): 0.1.x's previewer calls the old
+    -- nvim-treesitter `master` API (parsers.ft_to_lang), which no longer exists
+    -- now that nvim-treesitter is on `main`. master uses vim.treesitter directly.
+    branch = 'master',
     dependencies = {
       'nvim-lua/plenary.nvim',
       {
