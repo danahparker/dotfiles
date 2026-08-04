@@ -201,7 +201,7 @@ if.app-id = 'com.tinyspeck.slackmacgap'
 run = "move-node-to-workspace S"
 
 [[on-window-detected]]
-if.app-id = 'com.cisco.anyconnect.gui'
+if.app-id = 'com.cisco.secureclient.gui'
 run = "layout floating"
 
 [[on-window-detected]]
@@ -235,6 +235,22 @@ run = "move-node-to-workspace Z"
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 run = "move-node-to-workspace 1"
+
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+run = "move-node-to-workspace 2"
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.intellij'
+run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = "move-node-to-workspace 7"
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = "move-node-to-workspace 8"
 
 [[on-window-detected]]
 if.app-id = 'com.tidal.desktop'
