@@ -1,7 +1,6 @@
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 # -------------------- amazon q pre-block // keep at the top --------------------
-
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-
 # -------------------- powerlevel10k  --------------------
 
 [ -s "$HOME/powerlevel10k/powerlevel10k.zsh-theme" ] && source ~/powerlevel10k/powerlevel10k.zsh-theme
@@ -127,7 +126,6 @@ bindkey '\e[3;5~' backward-kill-word
 # -------------------- misc amazon setup --------------------
 
 [ -s "$HOME/clouddesk.sh" ] && source "$HOME/clouddesk.sh"
-[ -s "$HOME/odin.sh" ] && source "$HOME/odin.sh"
 [ -s "$HOME/.amazon_env_vars.sh" ] && source "$HOME/.amazon_env_vars.sh"
 
 # -------------------- pnpm --------------------
@@ -140,5 +138,10 @@ esac
 # pnpm end
 
 # -------------------- amazon q post-block // keep at the bottom  --------------------
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+
+# Added by AIM CLI
+export PATH="$HOME/.aim/mcp-servers:$PATH"
