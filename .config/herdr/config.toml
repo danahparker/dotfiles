@@ -1,0 +1,44 @@
+# Herdr config reference: https://herdr.dev/docs/config-reference/
+
+onboarding = false
+
+# =========== Keybindings ===========
+
+[keys]
+prefix = "ctrl+s"
+
+focus_pane_left = "prefix+h"
+focus_pane_right = "prefix+l"
+focus_pane_up = "prefix+k"
+focus_pane_down = "prefix+j"
+
+resize_mode = "prefix+r"
+
+split_vertical = "prefix+\\"
+split_horizontal = "prefix+minus"
+
+copy_mode = "prefix+["
+
+# =========== Terminal / behavior ===========
+
+[terminal]
+new_cwd = "follow"
+
+# =========== UI ===========
+
+[ui]
+mouse_capture = true
+copy_on_select = true
+
+show_agent_labels_on_pane_borders = false
+[ui.toast]
+delivery = "off"
+
+# =========== Theme ===========
+
+[theme]
+name = "gruvbox"
+auto_switch = false
+
+[ui.sound]
+enabled = true
